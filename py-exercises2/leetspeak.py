@@ -12,7 +12,7 @@
 paragraph = "THIS IS MY PARAGRAPH OF TEXT IN ALL CAPS. IT IS A RATHER \
 BORING PARAGRAPH, BUT IT NEEDS A BIT MORE TO BE CONSIDERED A PROPER \
 PARAGRAPH. LAST SENTENCE HERE."
-print("\n")
+print("")
 for char in paragraph:
     if char == "A":
         char = 4
@@ -29,4 +29,4 @@ for char in paragraph:
     elif char == "T":
         char = 7
     print(char, end="")
-print("\n")
+print("")
