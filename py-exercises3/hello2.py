@@ -6,12 +6,14 @@ import argparse
 
 # formats the arguments for argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('username', metavar='name', type=str, nargs=1,
+# requires at least one string as name
+parser.add_argument('username', metavar='name', type=str, nargs='*',
                     help="Enter a name so the computer can say hello")
+
 
 def hello(name):
     print("Hello, {}!".format(name))
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    hello(args.username[0])
+    hello(' '.join(args.username))
