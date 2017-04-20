@@ -12,6 +12,8 @@ def plot():
         ys.append(f(x))
 
     pyplot.plot(xs, ys)
+    pyplot.xlabel("Celsius")
+    pyplot.ylabel("Fahrenheit")
     pyplot.show()
 
 if __name__ == "__main__":
