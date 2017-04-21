@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # This program generates a randomized stary night using python3 and turtle.
-# The stars have a preference for appearing near the center of the screen.
+# The stars have a preference for appearing near the center of the screen and with a white color.
 
 import turtle as t
 import random
