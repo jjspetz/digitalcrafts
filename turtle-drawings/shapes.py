@@ -14,7 +14,7 @@ def equilateral_triangle(size=100, color="black", fill=False, wait=False):
     t.forward(size)
     t.left(120)
     t.forward(size)
-    t.right(60)
+    t.home()
     if fill:
         t.end_fill()
     if wait:

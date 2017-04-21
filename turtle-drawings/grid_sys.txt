@@ -1,0 +1,34 @@
+# alternative grid system for ex4.py
+# initial setup
+t.up()
+t.bk(330)
+t.lt(90)
+t.fd(300)
+t.rt(90)
+
+# intializes sums and switch which checks when to end loops
+width_sum = 0
+height_sum = 0
+switch = -90
+
+while height_sum <= 600:
+
+    # loops across a line
+    while width_sum <= 600:
+        t.down()
+        t.dot(5)
+        t.up()
+        x = 50 + random.randint(-30, 30)
+        width_sum += x
+        t.fd(x)
+
+    # reset width_sum for next line
+    width_sum = 0
+    switch = switch * -1
+
+    # moves down a line
+    t.rt(switch)
+    y = 50 + random.randint(-30, 30)
+    height_sum += y
+    t.fd(y)
+    t.rt(switch)
