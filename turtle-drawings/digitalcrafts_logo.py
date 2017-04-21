@@ -13,13 +13,14 @@ COLORS1 = ("#7BC242", "#5B893E", "#7BC242", "#447764", "#1466A2", "#1D8DCD",
 COLORS2 = ("#F89F1F", "#F47820", "#F89F1F", "#C28254", "#949597", "#BCBDBF",
  "#A6AAAB", "#949597", "#A6AAAB", "#6E6D72")
 
-def print_half(colors, factor=True):
+def print_half(colors, size="md", factor=True):
 
-    #
+    SIZE = {"xs":1/4, "sm":1/2, "md":1, "lg":2.5, "xl":5}
+
     if factor:
-        f = 1
+        f = 1 * SIZE[size]
     else:
-        f = -1
+        f = -1 * SIZE[size]
 
     # set up
     t.up()
@@ -169,6 +170,6 @@ def print_half(colors, factor=True):
 if __name__ == "__main__":
     print_half(COLORS1)
     t.home()
-    print_half(COLORS2, False)
+    print_half(COLORS2, factor=False)
     t.bgcolor("#223E4A")
     t.mainloop()
