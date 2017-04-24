@@ -20,8 +20,8 @@ def change_num(name, number):
     phonebook_dict[name] = number
 
 def print_all():
-    for name in phonebook_dict:
-        print(name + " : " + phonebook_dict[name])
+    for name, number in phonebook_dict.items():
+        print(name + ": " + number)
 
 if __name__ == "__main__":
     print_num('Elizabeth')

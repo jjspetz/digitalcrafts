@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as pyplot
+import matplotlib.pyplot as pyplot, mpld3
 
 def f(x):
     if x % 2 == 0:
@@ -14,8 +14,8 @@ def plot():
     for x in xs:
         ys.append(f(x))
 
-    pyplot.bar(xs, ys)
-    pyplot.show()
+    graph = pyplot.bar(xs, ys)
+    mpld3.fig_to_html(graph)
 
 if __name__ == "__main__":
     plot()

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as pyplot
+import matplotlib.pyplot as pyplot, mpld3
 import math
 from numpy import arange
 
@@ -14,7 +14,7 @@ def plot():
         ys.append(f(x))
 
     pyplot.plot(xs, ys)
-    pyplot.show()
+    mpld3.show()
 
 if __name__ == "__main__":
     plot()
