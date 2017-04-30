@@ -5,13 +5,15 @@ practice using objects
 '''
 
 class Person():
+
+    friends = []
+    greet_count = 0
+    ppl_greeted = []
+
     def __init__(self, name, email, phone):
         self.name = name
         self.email = email
         self.phone = phone
-        self.friends = []
-        self.greet_count = 0
-        self.ppl_greeted = []
 
     def __str__(self):
         return 'Person: {} {} {}'.format(self.name, self.email, self.phone)
@@ -37,6 +39,16 @@ class Person():
     def num_unique_ppl_greeted(self):
         print(len(self.ppl_greeted))
 
+    @classmethod
+    def make(cls):
+        name = input("What's your name?")
+        email = input("What's your email?")
+
+        return cls(name, email)
+
+    @staticmethod
+    def fix_name(name):
+        return name.replace('-', ' ')
 
 if __name__ == "__main__":
     sonny = Person('Sonny', 'sonny@hotmail.com', '483-485-4948')
