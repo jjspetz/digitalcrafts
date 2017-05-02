@@ -1,0 +1,41 @@
+
+body {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+div {
+  display: inline-block;
+  width: 33%;
+  height: 250px;
+  margin-top: 0.3%;
+}
+
+#one {
+ background-color: red;
+}
+#two {
+  background-color: yellow;
+}
+#three {
+  background-color: orange;
+}
+#four {
+  background-color: blue;
+}
+#five {
+  background-color: green;
+}
+#six {
+  background-color: pink;
+}
+#seven {
+  background-color: purple;
+}
+#eight {
+  background-color: lightgrey;
+}
+#nine {
+  background-color: violet;
+}

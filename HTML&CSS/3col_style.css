@@ -1,9 +1,9 @@
-html {position: relative}
 body {
   margin: 0;
   position: relative;
   text-align: center;
 }
+
 
 #left {
   padding-right: 1em;
