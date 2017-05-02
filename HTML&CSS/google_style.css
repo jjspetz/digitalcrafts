@@ -17,6 +17,15 @@ input {
   background-size: 18px;
   background-repeat: no-repeat;
   background-position: 97% 50%;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 2px #cdcdcd;
+}
+input:hover {
+  border: 1px solid #ebebeb;
+  box-shadow: 0 3px 5px #c0c0c0;
+}
+input:focus {
+  outline: none;
 }
 .btn-row {
   margin: 2em auto;
