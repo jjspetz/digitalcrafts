@@ -1,0 +1,47 @@
+html {position: relative}
+body {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+#left {
+  padding-right: 1em;
+  margin-left: 2em;
+  width: calc(20% - 3em);
+  height: 80%;
+  border-right: 1px solid black;
+}
+#right {
+  padding-left: 1em;
+  position: absolute;
+  top: 10%;
+  right: 2em;
+  width: calc(20% - 3em);
+  height: 80%;
+  border-left: 1px solid black;
+  text-align: left;
+}
+main {
+  width: calc(60% - 4em);
+  height: 80%;
+  padding: 0 2em;
+  position: absolute;
+  top: 10%;
+  left: calc(20%);
+}
+head {
+  margin 0 auto;
+  height: 10%;
+}
+
+footer {
+  position: absolute;
+  bottom: -10%;
+  width: 100%;
+  text-align: center;
+}
+
+#footer_content {
+
+}
