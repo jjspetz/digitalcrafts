@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+aside {
+  padding: 2em;
+  width: calc(30% - 4em);
+  min-width: 250px;
+  height: 80%;
+  border-right: 1px solid black;
+  float: left;
+}
+
+main {
+  width: calc(70% - 5em);
+  height: 80%;
+  padding: 2em;
+  float: right;
+}
+head {
+  margin 0 auto;
+  height: 10%;
+}
+
+footer {
+  padding-top: 4em;
+  clear: both;
+  text-align: center;
+}
+
+#footer_content {
+
+}
