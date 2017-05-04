@@ -1,0 +1,17 @@
+
+header {
+  display: flex;
+  justify-content: center;
+}
+.flexbox {
+  display: flex;
+  margin: 1em;
+}
+aside, main {
+  margin: 1em;
+  background-color: whitesmoke;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}

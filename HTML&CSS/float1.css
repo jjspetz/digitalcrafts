@@ -6,18 +6,22 @@ body {
 
 aside {
   padding: 2em;
-  width: calc(30% - 4em);
+  width: calc(30% - 4em - 1px);
   min-width: 250px;
   height: 80%;
-  border-right: 1px solid black;
+  min-height: 700px;
+  /*border-right: 1px solid gray;*/
   float: left;
 }
 
 main {
-  width: calc(70% - 5em);
+  width: calc(70% - 4em);
   height: 80%;
+  min-height: 700px;
   padding: 2em;
   float: right;
+  /*border-left: 1px solid gray;*/
+
 }
 head {
   margin 0 auto;
