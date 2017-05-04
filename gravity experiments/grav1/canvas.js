@@ -101,7 +101,7 @@ window.onload = function() {
       var dy = (Math.random() - 0.5) * 2; // creates change of y from -1 to 1
 
       circleArray.push(new Circle(x, y, dx, dy, radius));
-  }
+    }
   }
   // animates the things on the canvas
   function animate() {

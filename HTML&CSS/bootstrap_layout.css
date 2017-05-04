@@ -18,6 +18,10 @@ main {
 }
 li {
   text-align: left;
+  border-left: 1px solid black;
+}
+li:first-child {
+  border-left: none;
 }
 img {
   width: 200px;
