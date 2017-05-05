@@ -6,17 +6,21 @@ main {
   margin-right: 4em;
 }
 .navbar {
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+.navbar h4 {
   margin-left: 4em;
 }
 .title {
-  margin: 3em;
+  margin: 3em 0;
 }
 .item {
   margin: 0 auto;
   width: 8em;
   margin-bottom: 2em;
 }
-li {
+.nav li {
   text-align: left;
   border-left: 1px solid black;
 }
@@ -30,4 +34,13 @@ img {
 }
 .img-tag {
   margin-bottom: 3em;
+}
+
+@media screen and (max-width: 768px) {
+  .nav li {
+    border: 1px solid black;
+    margin-left: 4em;
+  }
+  .title {margin:6.5em 0 3em 0;}
+  .navbar {border: none;}
 }
