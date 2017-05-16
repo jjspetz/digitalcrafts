@@ -34,3 +34,34 @@ GROUP BY project.name, tech.name
 SELECT DISTINCT(tech.name) FROM project
 JOIN project_uses_tech ON project_id = project.id
 JOIN tech ON tech_id = tech.id
+--9
+SELECT DISTINCT(tech.name) FROM project
+RIGHT OUTER JOIN project_uses_tech ON project_id = project.id
+RIGHT OUTER JOIN tech ON tech_id = tech.id
+WHERE project.name IS NULL
+--10
+SELECT DISTINCT(project.name) FROM project
+JOIN project_uses_tech ON project_id = project.id
+JOIN tech ON tech_id = tech.id
+--11
+SELECT DISTINCT(project.name) FROM project
+LEFT OUTER JOIN project_uses_tech ON project_id = project.id
+LEFT OUTER JOIN tech ON tech_id = tech.id
+WHERE tech.id IS NULL
+--12
+SELECT DISTINCT(project.name), count(tech.id) FROM project
+LEFT OUTER JOIN project_uses_tech ON project_id = project.id
+LEFT OUTER JOIN tech ON tech_id = tech.id
+GROUP BY project.name
+ORDER BY count DESC
+--13
+SELECT DISTINCT(tech.name), count(project.id) FROM project
+LEFT OUTER JOIN project_uses_tech ON project_id = project.id
+JOIN tech ON tech_id = tech.id
+GROUP BY tech.name
+ORDER BY count DESC
+--14
+SELECT AVG(count) FROM (SELECT DISTINCT(project.name), count(tech.id) FROM project
+LEFT OUTER JOIN project_uses_tech ON project_id = project.id
+LEFT OUTER JOIN tech ON tech_id = tech.id
+GROUP BY project.name) AS alias
