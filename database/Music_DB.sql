@@ -1,0 +1,26 @@
+CREATE TABLE ARTIST (
+  id SERIAL NOT NULL PRIMARY KEY,
+  lead_artist BOOLEAN DEFAULT false,
+  song_writer BOOLEAN DEFAULT false,
+  collaborator BOOLEAN DEFAULT false,
+  name VARCHAR
+)
+
+CREATE TABLE ALBUM (
+  id SERIAL NOT NULL PRIMARY KEY,
+  release_date DATE,
+  name VARCHAR NOT NULL,
+)
+
+CREATE TABLE ARTIST_ALBUM (
+  id SERIAL NOT NULL PRIMARY KEY,
+  artist_id INTEGER REFERENCES artist (id)
+  album_id INTEGER REFERENCES album (id)
+)
+
+CREATE TABLE SONG (
+  id SERIAL NOT NULL PRIMARY KEY,
+  track INTEGER NOT NULL,
+  song VARCHAR NOT NULL,
+  album_id INTEGER REFERENCES album (id)
+)
