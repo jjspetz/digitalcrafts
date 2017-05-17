@@ -56,3 +56,26 @@ GROUP BY song
 ORDER BY count DESC LIMIT 5
 -- 12
 -- skip no relevant data
+-- 13
+SELECT CASE WHEN song_writer=true THEN name END AS song_writer, count(track) FROM track
+JOIN artist on artist.id = artist_id
+WHERE CASE WHEN song_writer=true THEN name END IS NOT NULL
+GROUP BY song_writer, name
+-- 14
+SELECT artist.name, song from track
+JOIN artist ON artist.id = artist_id
+JOIN song ON song.id = song_id
+WHERE name ILIKE '%yuna%'
+-- 15
+SELECT CASE WHEN song_writer=true THEN artist.name END AS song_writer, song FROM track
+JOIN artist on artist.id = artist_id
+JOIN song on song.id = song_id
+JOIN album on album.id = album_id
+WHERE band ILIKE 'Jau%' and CASE WHEN song_writer=true THEN artist.name END IS NOT NULL
+GROUP BY song_writer, song, artist.name
+-- 16
+SELECT band FROM track
+JOIN artist on artist.id = artist_id
+JOIN song on song.id = song_id
+JOIN album on album.id = album_id
+WHERE CASE WHEN song_writer=true THEN artist.name END ILIKE 'Wri%'
