@@ -26,6 +26,3 @@ function tipAmount(bill, service) {
      return "Enter proper service type."
    }
  }
-
-// edit input here
-tipAmount(25.40, 'fair');

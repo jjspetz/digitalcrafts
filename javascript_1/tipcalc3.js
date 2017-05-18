@@ -26,6 +26,20 @@ function tipAmount(bill, service) {
      return "Enter proper service type."
    }
  }
-
-// edit input here
-tipAmount(25.40, 'fair');
+function splitAmount(bill, service, ways) {
+    if (ways >= 1) {
+      if (service.toLowerCase() == 'good') {
+        return bill * 1.2 / ways;
+      }
+      else if (service.toLowerCase() == 'fair') {
+        return bill * 1.15 / ways;
+      }
+      else if (service.toLowerCase() == 'bad') {
+        return bill * 1.1 / ways;
+      } else {
+        return "Enter proper service type."
+      }
+    } else {
+      return "3rd argument must be a positive integer."
+    }
+}
