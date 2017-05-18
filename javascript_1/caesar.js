@@ -23,14 +23,21 @@ function decrypt(text, key) {
     for (var i=0; i < text.length; i++) {
       var char = text.charCodeAt(i);
       if (char > 64 && char < 91) {
-        originalText.push(String.fromCharCode((char - 65 - key) % 26 + 65));
+        if (char - key > 64 && char - key < 91) {
+          originalText.push(String.fromCharCode((char - 65 - key) % 26 + 65));
+        } else {
+          originalText.push(String.fromCharCode((char - 65 + 26 - key) % 26 + 65));
+        }
       }
       else if (char > 96 && char < 123) {
-        originalText.push(String.fromCharCode((char - 97 - key) % 26 + 97));
+        if (char - key > 96 && char - key < 123) {
+          originalText.push(String.fromCharCode((char - 97 - key) % 26 + 97));
+        } else {
+          originalText.push(String.fromCharCode((char - 97 + 26 - key) % 26 + 97));
+        }
       } else {
         originalText.push(String.fromCharCode(char));
       }
     }
     return originalText.join('');
-  }
 }
