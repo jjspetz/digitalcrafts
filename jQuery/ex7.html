@@ -20,7 +20,23 @@
 
     $('document').ready(function () {
       $('#add-button').click(function() {
-        $('todo-list').append('<li>'+$('description').val()+'</li>');
+        $('#todo-list').append('<li><input class="box" type="checkbox">'
+         + $('#description').val() + ' <button class="x">X</button></li>');
+        $('#description').val('');
+
+        // inside other function so #x is recognized as an id
+        $('.x').click(function() {
+          this.closest('li').remove();
+        });
+
+        $('.box').click(function() {
+          // checks to see if the checkbox is checkbox
+          if ($(this).prop('checked')) {
+            $(this).closest('li').css('text-decoration', 'line-through');
+          } else { // add strike though if not checked
+            $(this).closest('li').css('text-decoration', 'none');
+          }
+        })
       });
     });
 
@@ -29,6 +45,9 @@
     #wrapper {
       max-width: 480px;
       margin: auto;
+    }
+    #todo-list li {
+      list-style: none;
     }
 
     #description, #search, #todo-list {
@@ -41,7 +60,7 @@
       <input id="description" type="text" name="description">
       <button id="add-button">Add Task</button>
       <ul id="todo-list">
-        <li>Feed the cat</li>
+
       </ul>
     </div>
   </body>
