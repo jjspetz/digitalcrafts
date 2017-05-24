@@ -20,8 +20,9 @@
 
     $('document').ready(function () {
       $('#add-button').click(function() {
-        $('#todo-list').append('<li><input class="box" type="checkbox">'
+        $('#todo-list').append('<li><input class="box" type="checkbox"> '
          + $('#description').val() + ' <button class="x">X</button></li>');
+        // clears previous input
         $('#description').val('');
 
         // inside other function so #x is recognized as an id
