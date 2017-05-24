@@ -2,6 +2,7 @@
 
 class Deck {
   constructor() {
+    this. shuffled_deck = []
     this.cards = [];
     this.remain = 52;
     this.init = function () {
@@ -17,14 +18,27 @@ class Deck {
   }
 
   draw() {
-
+    var card = this.cards.pop();
+    return card;
   }
 
   shuffle() {
-
+    var index = Math.floor(Math.random() * this.cards.length)
+    var card = this.cards[index];
+    this.cards.splice(index, 1);
+    this.shuffled_deck.push(card);
+    console.log(card);
+    if (this.cards.length > 0) {
+      this.shuffle();
+    }
+    else if (this.cards.length = 0) {
+      for (let i=0; i<this.shuffled_deck.length; i++) {
+        this.cards.push(this.shuffled_deck[i]);
+      }
+    }
   }
 
   cardsLeft() {
-
+    return this.cards.length;
   }
 }
