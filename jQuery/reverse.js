@@ -1,10 +1,10 @@
 $.fn.reverse = function () {
-  this.click(function() {
-    console.log(this.text())
-    var str = this.text();
+  this.click((event) => {
+    var str = $(event.target).text();
     str = str.split('');
     str = str.reverse();
     str = str.join('');
-    this.text(str);
+    $(event.target).text(str);
   });
 }
+$('h2').reverse();
