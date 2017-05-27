@@ -5,14 +5,14 @@ $.fn.reverse = function (preserveCapitalization=true) {
     var newStr = [];
     if (preserveCapitalization == true) {
       for (let i=0; i<str.length; i++) {
-        if (str[i] == str[i].toUpperCase()) {
+        if (str[i] == str[i].toUpperCase() && /\S/.test(str[i])) {
           newStr.push(1);
+          str[i] = str[i].toLowerCase();
         } else {
           newStr.push(0);
         }
       }
-      console.log(newStr);
-      str = str.reverse().toLowerCase();
+      str = str.reverse();
       for (let i=0; i<newStr.length; i++) {
         if (newStr[i] == 1) {
           str[i] = str[i].toUpperCase();
