@@ -46,3 +46,14 @@ function greeting(person, callback) {
 greeting('지혜', function(result) {
   console.log(result);
 });
+
+function product(numbers, callback) {
+  var result = numbers.reduce(function(a, b) {
+    return a * b;
+  }, 1);
+  callback(result);
+}
+// product function test call
+product([3, 4, 2], function(r) {
+  console.log(r);
+});
