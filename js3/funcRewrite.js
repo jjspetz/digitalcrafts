@@ -25,3 +25,8 @@ function add(x, y, callback) {
   var result = x + y;
   callback(result);
 }
+
+function subtract(x, y) {
+  var result = x - y;
+  callback(result);
+}
