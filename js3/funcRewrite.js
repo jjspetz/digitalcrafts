@@ -19,5 +19,9 @@ function product(numbers) {
     return a * b;
   }, 1);
 }
-
 */
+
+function add(x, y, callback) {
+  var result = x + y;
+  callback(result);
+}
