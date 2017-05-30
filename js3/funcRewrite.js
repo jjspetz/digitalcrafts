@@ -25,8 +25,16 @@ function add(x, y, callback) {
   var result = x + y;
   callback(result);
 }
+// add function call
+add(2,2, function(stuff) {
+  console.log(stuff);
+});
 
-function subtract(x, y) {
+function subtract(x, y, callback) {
   var result = x - y;
   callback(result);
 }
+// subtract function call
+subtract(4,2, function(stuff) {
+  console.log(stuff);
+});
