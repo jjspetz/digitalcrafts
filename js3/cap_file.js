@@ -5,6 +5,7 @@ var file = 'file1.txt';
 
 fs.readFile(file, function(error, buffer) {
   if (error) {
+    console.log('filename: ' + file);
     console.log(error.message);
     return;
   }
