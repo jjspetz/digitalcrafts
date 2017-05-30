@@ -38,3 +38,11 @@ function subtract(x, y, callback) {
 subtract(4,2, function(stuff) {
   console.log(stuff);
 });
+
+function greeting(person, callback) {
+  callback('안녕하세요, ' + person + '!');
+}
+// greeting test call
+greeting('지혜', function(result) {
+  console.log(result);
+});
