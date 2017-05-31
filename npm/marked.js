@@ -13,5 +13,5 @@ marked.setOptions({
   smartypants: false
 });
 
-console.log(marked('# Houston-Hackathon'));
+console.log(marked('# Houston-Hackathon', ''));
 console.log(marked('I am using __markdown__.'));

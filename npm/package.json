@@ -9,6 +9,7 @@
   "author": "JJ Spetseris",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.4",
     "marked": "^0.3.6"
   }
 }
