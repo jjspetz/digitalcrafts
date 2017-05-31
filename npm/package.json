@@ -1,0 +1,11 @@
+{
+  "name": "npm_practice",
+  "version": "1.0.0",
+  "description": "practice using npm for digitalcrafts lessons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JJ Spetseris",
+  "license": "ISC"
+}
