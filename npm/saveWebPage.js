@@ -19,4 +19,4 @@ function saveWebPage(url, filename, callback) {
   });
 }
 
-exports.saveWebPage = saveWebPage;
+module.exports = saveWebPage;

@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width">
+
+  
+  <title>CSS-Tricks</title>
+
+  <link rel="apple-touch-icon" href="https://cdn.css-tricks.com/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-TileImage" content="https://cdn.css-tricks.com/mstile-144x144.png">
+
+  <meta property="fb:pages" content="124436167285">
+
+  <link rel="search" type="application/opensearchdescription+xml" href="https://cdn.css-tricks.com/opensearch.xml" title="CSS-Tricks Search">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/CssTricks">
+
+  <link rel="stylesheet" href="https://cloud.typography.com/610186/6645572/css/fonts.css">
+  <!--[if !IE]><!-->
+  <link rel="stylesheet" href="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/style.css?v=5.7">
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/css/oldie.css">
+  <![endif]-->
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/style.css?v=5.7>
+  <![endif]-->
+
+    
+  
+<!-- This site is optimized with the Yoast SEO plugin v4.8 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Tips, Tricks, and Techniques on using Cascading Style Sheets."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://css-tricks.com/" />
+<link rel="next" href="https://css-tricks.com/page/2/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CSS-Tricks" />
+<meta property="og:description" content="CSS-Tricks is a website about websites." />
+<meta property="og:url" content="https://css-tricks.com/" />
+<meta property="og:site_name" content="CSS-Tricks" />
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2014/03/css-tricks-star.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Tips, Tricks, and Techniques on using Cascading Style Sheets." />
+<meta name="twitter:title" content="CSS-Tricks" />
+<meta name="twitter:site" content="@Real_CSS_Tricks" />
+<meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2014/03/css-tricks-star.png" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/css-tricks.com\/","name":"CSS-Tricks","potentialAction":{"@type":"SearchAction","target":"https:\/\/css-tricks.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<script type='text/javascript' src='https://cdn.css-tricks.com/wp-content/uploads/minqueue-cache/minqueue-ca14aaa7-9be6b636.js'></script>
+<link rel='https://api.w.org/' href='https://css-tricks.com/wp-json/' />
+<!-- Better Art Direction Styles -->
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'>
+<link rel='dns-prefetch' href='//s0.wp.com'>
+<link rel='dns-prefetch' href='//s1.wp.com'>
+<link rel='dns-prefetch' href='//s2.wp.com'>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'>
+<link rel='dns-prefetch' href='//0.gravatar.com'>
+<link rel='dns-prefetch' href='//1.gravatar.com'>
+<link rel='dns-prefetch' href='//2.gravatar.com'>
+<script type="text/javascript">var algolia = {"debug":false,"application_id":"V0D2YCS22R","search_api_key":"c31ce3c9664f308b166cc7757a3884e7","powered_by_enabled":false,"query":"","autocomplete":{"sources":[]},"indices":[]};</script>
+</head>
+
+<body class="home blog">
+
+  <script>
+    (function(){
+      var bsa = document.createElement('script');
+         bsa.async = true;
+         bsa.src = "//s3.buysellads.com/ac/bsa.js";
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+    })();
+  </script>
+
+  <header class="site-header">
+
+  <div class="menu-toggle-area">
+    <button id="mobile-menu-toggle" class="button button-header mobile-menu-toggle">
+      <svg class="icon-menu" width="26px" height="26px">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="logo">
+    <a href="/">
+      <svg class="icon-logo-star" width="26px" height="26px">
+        <use xlink:href="#icon-logo-star"></use>
+      </svg>
+    </a>
+  </div>
+
+  <div class="header-middle-area">
+
+    <a href="/" class="logo-link">
+      CSS-Tricks
+    </a>
+
+  </div>
+
+  <button id="search-opener" class="button button-header search-opener-button">
+    <svg class="icon-search" width="26px" height="26px">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+    <svg class="icon-close" width="26px" height="26px">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </button>
+
+  <div class="search" role="search" id="search-area">
+
+    <form id="search-form" class="search-form" action="/search-results/">
+
+      <label for="q" id="search-label" class="screen-reader">
+        Search
+      </label>
+
+      <input aria-labelledby="search-label" id="q" required type="search" name="q" class="search-field" value="">
+
+      <button type="submit" class="button button-header search-button">
+        <svg class="icon-search" width="26px" height="26px">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </button>
+
+    </form>
+
+  </div>
+
+</header>
+
+  <div class="all-site-wrap">
+
+    <nav class="main-nav" id="main-nav">
+
+  <ul>
+    <li class="home">
+      <a href="/">
+        <svg class="icon-nav-home" width="26px" height="26px">
+          <use xlink:href="#icon-nav-home"></use>
+        </svg>
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="videos">
+      <a href="/video-screencasts/">
+        <svg class="icon-nav-video" width="26px" height="26px">
+          <use xlink:href="#icon-nav-video"></use>
+        </svg>
+        <span>Videos</span>
+      </a>
+    </li>
+    <li class="almanac">
+      <a href="/almanac/">
+        <svg class="icon-nav-almanac" width="26px" height="26px">
+          <use xlink:href="#icon-nav-almanac"></use>
+        </svg>
+        <span>Almanac</span>
+      </a>
+    </li>
+    <li class="gallery">
+      <a href="/gallery/">
+        <svg class="icon-nav-gallery" width="26px" height="26px">
+          <use xlink:href="#icon-nav-gallery"></use>
+        </svg>
+        <span>Gallery</span>
+      </a>
+    </li>
+    <li class="snippets">
+      <a href="/snippets/">
+        <svg class="icon-nav-snippets" width="26px" height="26px">
+          <use xlink:href="#icon-nav-snippets"></use>
+        </svg>
+        <span>Snippets</span>
+      </a>
+    </li>
+    <li class="forums">
+      <a href="/forums/">
+        <svg class="icon-nav-forums" width="26px" height="26px">
+          <use xlink:href="#icon-nav-forums"></use>
+        </svg>
+        <span>Forums</span>
+      </a>
+    </li>
+    <li class="newsletter">
+      <a href="/newsletters/">
+        <svg class="icon-nav-newsletter" width="26px" height="26px">
+          <use xlink:href="#icon-nav-newsletter"></use>
+        </svg>
+        <span>Newsletter</span>
+      </a>
+    </li>
+<!--     <li class="shop">
+      <a href="/shop/">
+        <svg class="icon-nav-shop" width="26px" height="26px">
+          <use xlink:href="#icon-nav-shop"></use>
+        </svg>
+        <span>Shop</span>
+      </a>
+    </li> -->
+    <li class="jobs">
+      <a href="/jobs/">
+        <svg class="icon-nav-jobs" width="26px" height="26px">
+          <use xlink:href="#icon-nav-jobs"></use>
+        </svg>
+        <span>Jobs</span>
+      </a>
+    </li>
+    <li class="guides">
+      <a href="/guides/">
+        <svg class="icon-nav-guide" width="26px" height="26px">
+          <use xlink:href="#icon-nav-guide"></use>
+        </svg>
+        <span>Guides</span>
+      </a>
+    </li>
+  </ul>
+
+</nav>
+<div class="page-wrap page-wrap-home">
+
+  <main class="full-col">
+
+    
+    
+      
+<article class="article-card module module-articlelink module-sponsored" id="post-255345">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class=" h4">
+            <a href="http://synd.co/2r90Lvr" class="article-card-header read-article" rel="nofollow">
+              HelloSign: The Industry’s Fastest eSignature API Integration            </a>
+          </h2>
+
+                      <a class="sponsor-graphic" href="http://synd.co/2r90Lvr">
+              <svg class="icon-star" width="26px" height="26px">
+                <use xlink:href="#icon-star"></use>
+              </svg>
+            </a>
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/hellosign-industrys-fastest-esignature-api-integration/">#</a>
+          <time datetime="2017-06-01">
+            June 1, 2017          </time>
+                                <span class="badge">Sponsored</span>
+                  </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>My favorite kind of software products are the ones that very clearly make life simpler. Being able to legally sign a document by clicking a button in an email and squiggling my mouse to make my signature is definitely one of those things.</p>
+<figure id="post-255382" class="align-none media-255382"><img src="https://cdn.css-tricks.com/wp-content/uploads/2017/05/mobile-signing.png" srcset="https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1496237201/mobile-signing_z4jm8x.png 1000w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_777,f_auto,q_auto/v1496237201/mobile-signing_z4jm8x.png 777w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_200,f_auto,q_auto/v1496237201/mobile-signing_z4jm8x.png 200w" sizes="(min-width: 1400px) 856px,
+       (min-width: 1086px) calc(100vw - 490px),
+       (min-width: 626px)  calc(100vw - 335px),
+                           calc(100vw - 30px)" alt="" /></figure>
+<p> <a href="https://css-tricks.com/hellosign-industrys-fastest-esignature-api-integration/#more-255345" class="more-link"><span aria-label="Continue reading HelloSign: The Industry’s Fastest eSignature API Integration">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlelink" id="post-255360">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class=" h4">
+            <a href="http://kellysutton.com/2017/05/29/deletability.html" class="article-card-header read-article">
+              Deletability            </a>
+          </h2>
+
+                      <a class="link-graphic" href="http://kellysutton.com/2017/05/29/deletability.html">
+              <svg class="icon-link" width="26px" height="26px">
+                <use xlink:href="#icon-link"></use>
+              </svg>
+            </a>
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/deletability/">#</a>
+          <time datetime="2017-06-01">
+            June 1, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/robinrendle/">
+                <span class="p-author">
+                  Robin Rendle                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>Kelly Sutton has written a post called <a href="http://kellysutton.com/2017/05/29/deletability.html">Deletability</a> and I've been thinking about it all day and how his ideas relate to writing CSS:</p>
+<blockquote>
+<p>By working with code, we see that modularity and deletability are closely related. Properly modularized code is easy to delete.</p>
+<p>Writing deletable code is writing good code.</p>
+</blockquote>
+<p>Apparently, this is a common approach to writing software although I've never heard of this concept when taken to the front-end side of things. But! I think it should be a goal for us to have in mind when we’re naming classes or building complex layouts. And after mulling over this idea all day I think that questions like "<em>can I throw this code away easily?</em>" should be a measuring stick for whether we're doing a good job at writing CSS.</p>
+<p> <a href="https://css-tricks.com/deletability/#more-255360" class="more-link"><span aria-label="Continue reading Deletability">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/css-modules/" rel="tag">css modules</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255193">
+
+  
+      <a href="https://css-tricks.com/build-style-guide-straight-sass/" class="the-post-thumbnail">
+      <img width="881" height="329" src="https://cdn.css-tricks.com/wp-content/uploads/2017/05/colors.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_881/v1495741333/colors_kujxs3.png 881w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_200/v1495741333/colors_kujxs3.png 200w" sizes="(min-width: 1400px) 856px,
+       (min-width: 1086px) calc(100vw - 490px),
+       (min-width: 626px)  calc(100vw - 335px),
+                           calc(100vw - 30px)" />    </a>
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/build-style-guide-straight-sass/" class="article-card-header read-article">
+              Build a Style Guide Straight from Sass            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/build-style-guide-straight-sass/">#</a>
+          <time datetime="2017-06-01">
+            June 1, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/benjamingrobertson/">
+                <span class="p-author">
+                  Benjamin Robertson                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>Last fall, our dev team wanted to get started with style guides. We had added a new member to the team, and as he was getting up to speed, we realized how lacking our project documentation was. If you've ever been a new developer on a team with weak documentation, you know how confusing it can be to try to familiarize yourself with a dozen projects without documentation.</p>
+<p> <a href="https://css-tricks.com/build-style-guide-straight-sass/#more-255193" class="more-link"><span aria-label="Continue reading Build a Style Guide Straight from Sass">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/sass/" rel="tag">Sass</a> <a href="https://css-tricks.com/tag/style-guide/" rel="tag">style guide</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255226">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/animating-single-div-art/" class="article-card-header read-article">
+              Animating Single Div Art            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/animating-single-div-art/">#</a>
+          <time datetime="2017-05-31">
+            May 31, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/dancwilson/">
+                <span class="p-author">
+                  Dan Wilson                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>One thing that single <code>div</code> pieces rarely do is animate.  If you can transform your <code>div</code> or one of its pseudo elements, that's fair (as Lynn Fisher does with her fantastic <a href="http://a.singlediv.com/#bb8">BB-8</a>). But you cannot directly change the <code>opacity</code> or <code>transform</code> of the individual "elements" you create inside your <code>div</code>, since they are not actual DOM elements.</p>
+
+<p>I am a big believer of trying something a little different and interesting to learn tools you otherwise might never learn. Working with the constraints of a single <code>div</code> might not be great for production work, but it can be a great exercise (and challenge) to stretch your skills in a fun way. In that spirit, we'll use this technique to explore how Custom Properties (CSS Variables) work and even provide us a path to animation inside our <code>div</code>.</p>              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/animation/" rel="tag">animation</a> <a href="https://css-tricks.com/tag/custom-properties/" rel="tag">custom properties</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-254942">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/can-make-icon-system-accessible/" class="article-card-header read-article">
+              How Can I Make My Icon System Accessible?            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/can-make-icon-system-accessible/">#</a>
+          <time datetime="2017-05-31">
+            May 31, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>Here's a question I got the other day?</p>
+<blockquote><p>Would you suggest <strong>icon fonts</strong> or <strong>inline SVGs</strong> for a complex single page application? And are there specific accessibility concerns for either? Accessibility is especially important for us because schools use our products. I ask because we are currently in the process of unifying and setting up an icon system.</p></blockquote>
+<p> <a href="https://css-tricks.com/can-make-icon-system-accessible/#more-254942" class="more-link"><span aria-label="Continue reading How Can I Make My Icon System Accessible?">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/a11y/" rel="tag">a11y</a> <a href="https://css-tricks.com/tag/icons/" rel="tag">icons</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlelink" id="post-255375">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class=" h4">
+            <a href="https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6" class="article-card-header read-article">
+              Floating Labels are Problematic            </a>
+          </h2>
+
+                      <a class="link-graphic" href="https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6">
+              <svg class="icon-link" width="26px" height="26px">
+                <use xlink:href="#icon-link"></use>
+              </svg>
+            </a>
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/floating-labels-problematic/">#</a>
+          <time datetime="2017-05-31">
+            May 31, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>I feel like all these issues are handleable, but the damning issue is #3: <strong>they need space to move into</strong>. Labels can't go away and need to be readable at all times, so a floating label pattern <em>doesn't actually save any space</em>. You could have just put the labels where they float to to begin with. It's still a neat effect, but it doesn't buy you anything and may just cost you something.</p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/forms/" rel="tag">forms</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+        <div class="bsap-doubles">
+          <div id="bsap_1250418" class="bsarocks bsap_3469a2a501a9e18091036aa0c89f9dcb"></div>
+        </div>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255312">
+
+  
+      <a href="https://css-tricks.com/browserlist-good-idea/" class="the-post-thumbnail">
+      <img width="704" height="726" src="https://cdn.css-tricks.com/wp-content/uploads/2017/05/browserlist-logo.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_704/v1496153972/browserlist-logo_o6cy6u.png 704w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_200/v1496153972/browserlist-logo_o6cy6u.png 200w" sizes="(min-width: 1400px) 856px,
+       (min-width: 1086px) calc(100vw - 490px),
+       (min-width: 626px)  calc(100vw - 335px),
+                           calc(100vw - 30px)" />    </a>
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/browserlist-good-idea/" class="article-card-header read-article">
+              Browserslist is a Good Idea            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/browserlist-good-idea/">#</a>
+          <time datetime="2017-05-30">
+            May 30, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>I think, as front-end developers, we're well aware that different browsers (and versions) support different things. We make <em>choices</em> based on web features we'd like to use balanced with what statistics tell us about our users and what browsers they use. Only 0.01% of users left on IE 9, we might see from our Google Analytics, OK, let's start using Flexbox and .classList.</p>
+<p> <a href="https://css-tricks.com/browserlist-good-idea/#more-255312" class="more-link"><span aria-label="Continue reading Browserslist is a Good Idea">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/autoprefixer/" rel="tag">autoprefixer</a> <a href="https://css-tricks.com/tag/babel/" rel="tag">babel</a> <a href="https://css-tricks.com/tag/browserlist/" rel="tag">browserlist</a> <a href="https://css-tricks.com/tag/eslint/" rel="tag">eslint</a> <a href="https://css-tricks.com/tag/stylelint/" rel="tag">stylelint</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255301">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/managing-state-css-reusable-javascript-functions-part-2/" class="article-card-header read-article">
+              Managing State in CSS with Reusable JavaScript Functions &#8211; Part 2            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/managing-state-css-reusable-javascript-functions-part-2/">#</a>
+          <time datetime="2017-05-30">
+            May 30, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/silveredge9/">
+                <span class="p-author">
+                  Luke Harrison                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>In my previous article, which shall now retroactively be known as <a href="https://css-tricks.com/managing-state-css-reusable-javascript-functions/">Managing State in CSS with Reusable JavaScript Functions - Part 1</a>, we created a powerful reusable function which allows us to quickly add, remove and toggle stateful classes via click. </p>
+<p>One of the reasons I wanted to share this approach was to see what kind of response it would generate. Since then I've received some interesting feedback from other developers, with some raising valid shortcomings about this approach that would have never otherwise occurred to me.</p>
+<p>In this article, I'll be providing some solutions to these shortcomings, as well as baking in more features and general improvements to make our reusable function even more powerful.</p>
+<p> <a href="https://css-tricks.com/managing-state-css-reusable-javascript-functions-part-2/#more-255301" class="more-link"><span aria-label="Continue reading Managing State in CSS with Reusable JavaScript Functions &#8211; Part 2">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/aria/" rel="tag">aria</a> <a href="https://css-tricks.com/tag/javascript/" rel="tag">JavaScript</a> <a href="https://css-tricks.com/tag/state-management/" rel="tag">state management</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255202">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/reactive-uis-vanillajs-part-1-pure-functional-style/" class="article-card-header read-article">
+              Reactive UI&#8217;s with VanillaJS &#8211; Part 1: Pure Functional Style            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/reactive-uis-vanillajs-part-1-pure-functional-style/">#</a>
+          <time datetime="2017-05-29">
+            May 29, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/brundolf/">
+                <span class="p-author">
+                  Brandon Smith                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>Last month Chris Coyier wrote a <a href="https://css-tricks.com/project-need-react/">post</a> investigating the question, "When Does a Project Need React?" In other words, when do the benefits of using React (acting as a stand-in for data-driven web frameworks in general), rather than server-side templates and jQuery, outweigh the added complexity of setting up the requisite tooling, build process, dependencies, etc.? A week later, Sacha Greif wrote a <a href="https://css-tricks.com/projects-need-react/">counterpoint post</a> arguing why you should always use such a framework for every type of web project. His points included future-proofing, simplified workflow from project to project (a single architecture; no need to keep up with multiple types of project structures), and improved user experience because of client-side re-rendering, even when the content doesn't change very often. </p>
+<p>In this pair of posts, I delve into a middle ground: writing reactive-style UI's in plain old JavaScript - no frameworks, no preprocessors.</p>
+<p> <a href="https://css-tricks.com/reactive-uis-vanillajs-part-1-pure-functional-style/#more-255202" class="more-link"><span aria-label="Continue reading Reactive UI&#8217;s with VanillaJS &#8211; Part 1: Pure Functional Style">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/javascript/" rel="tag">JavaScript</a> <a href="https://css-tricks.com/tag/loops/" rel="tag">loops</a> <a href="https://css-tricks.com/tag/template-literal/" rel="tag">template literal</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlelink" id="post-255272">
+
+  
+      <a href="http://mediatemple.net/blog/tips/full-page-background-video-styles/" class="the-post-thumbnail">
+      <img width="640" height="284" src="https://cdn.css-tricks.com/wp-content/uploads/2017/05/May-28-2017-08-06-46.gif" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_640/v1495976835/May-28-2017-08-06-46_qxnqnh.gif 640w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_489/v1495976835/May-28-2017-08-06-46_qxnqnh.gif 489w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_413/v1495976835/May-28-2017-08-06-46_qxnqnh.gif 413w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_320/v1495976835/May-28-2017-08-06-46_qxnqnh.gif 320w, https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_200/v1495976835/May-28-2017-08-06-46_qxnqnh.gif 200w" sizes="(min-width: 1400px) 856px,
+       (min-width: 1086px) calc(100vw - 490px),
+       (min-width: 626px)  calc(100vw - 335px),
+                           calc(100vw - 30px)" />    </a>
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class=" h4">
+            <a href="http://mediatemple.net/blog/tips/full-page-background-video-styles/" class="article-card-header read-article">
+              Full Page Background Video Styles            </a>
+          </h2>
+
+                      <a class="link-graphic" href="http://mediatemple.net/blog/tips/full-page-background-video-styles/">
+              <svg class="icon-link" width="26px" height="26px">
+                <use xlink:href="#icon-link"></use>
+              </svg>
+            </a>
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/full-page-background-video-styles/">#</a>
+          <time datetime="2017-05-28">
+            May 28, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>Making a full page background video is slightly trickier than<a href="https://css-tricks.com/perfect-full-page-background-image/"> a full page background image</a>. Over on the Media Temple blog, I take a look at how that's done, but then also what the design patterns are once you've done it. You likely need text over top the video, so do you center it? Do you let the page scroll and cover the video? Do you get fancy and fade out the header as you scroll?</p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/video/" rel="tag">video</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255094">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/production-progressive-web-apps-javascript-frameworks/" class="article-card-header read-article">
+              Production Progressive Web Apps with JavaScript Frameworks            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/production-progressive-web-apps-javascript-frameworks/">#</a>
+          <time datetime="2017-05-27">
+            May 27, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/sdrasner/">
+                <span class="p-author">
+                  Sarah Drasner                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>This last week at Google I/O, Addy Osmani announced some amazing developer resources for creating Progressive Web Applications (PWAs) that prioritize performance with JavaScript Frameworks. </p>
+<p>This was truly a team effort- a lot of people worked on these projects to get them going, and it's a really valuable contribution to the community. A lot of people want better performance for their framework of choice but can't get buy-in for time and resources to devote to this kind of endeavor. The ability to start with a baseline of high performance and good lighthouse scores is incredibly valuable, allowing developers to enjoy both the productivity and ergonomics of exciting frameworks, without sacrificing speed and user experience.</p>
+<p> <a href="https://css-tricks.com/production-progressive-web-apps-javascript-frameworks/#more-255094" class="more-link"><span aria-label="Continue reading Production Progressive Web Apps with JavaScript Frameworks">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/progressive-web-app/" rel="tag">progressive web app</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlelink" id="post-255224">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class=" h4">
+            <a href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660" class="article-card-header read-article">
+              A Unified Styling Language            </a>
+          </h2>
+
+                      <a class="link-graphic" href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660">
+              <svg class="icon-link" width="26px" height="26px">
+                <use xlink:href="#icon-link"></use>
+              </svg>
+            </a>
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/unified-styling-language/">#</a>
+          <time datetime="2017-05-26">
+            May 26, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>This article by Mark Dalgleish will go down as one of the most important front-end development articles of 2017.</p>
+<p>It's about the hot topic that is "CSS in JavaScript". Mark walks us through how that's actually not a simple and singular idea, but a continuum of concepts and implementations. There are lots of projects that all approach it in different ways. It's likely that the best ways are the projects that actually generate real CSS. These things are a far cry from "inline styles".</p>
+<p>Regular ol' CSS isn't going anywhere, but these CSS in JS ideas aren't either. There is some serious benefits to them for a lot of projects. Scoped styles preventing styling mistakes. Performance gains through critical styles. Only shipping the minimum amount of styles needed. Stylesheets that nobody is afraid of and don't become the proverbial "append only" stylesheets. Not to mention that if you are going to be styling in a JavaScript environment, you get the possibility of dynamic styles and porting those styles to other platforms and such.</p>
+              </div>
+
+    </div>
+
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255188">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/snap-animation-states/" class="article-card-header read-article">
+              Snap Animation States            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/snap-animation-states/">#</a>
+          <time datetime="2017-05-26">
+            May 26, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/bkdiehl/">
+                <span class="p-author">
+                  Briant Diehl                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>There are many ways to make icons for a website. Inline SVG is scalable, easy to modify with CSS, and can even be animated. If you're interested in learning more about the merits of using inline SVG, I recommend reading <a href="https://css-tricks.com/icon-fonts-vs-svg/">Inline SVG vs Icon Fonts</a>. With ever increasing browser support, there's never been a better time to start working with SVGs. Snap Animation States is a JavaScript plugin built around <a href="http://snapsvg.io/">Snap.svg</a> to help create and extend icon libraries with scaleable, editable SVG icons. Snap Animation States makes it easy to load and animate those SVGs with a simple schema.</p>
+<p> <a href="https://css-tricks.com/snap-animation-states/#more-255188" class="more-link"><span aria-label="Continue reading Snap Animation States">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/animation/" rel="tag">animation</a> <a href="https://css-tricks.com/tag/svg/" rel="tag">SVG</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-255177">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/future-front-end-web-development/" class="article-card-header read-article">
+              What is the Future of Front End Web Development?            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/future-front-end-web-development/">#</a>
+          <time datetime="2017-05-25">
+            May 25, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>I was asked to do a little session on this the other day. I'd say I'm underqualified to answer the question, as is any single person. If you really needed hard answers to this question, you'd probably look to aggregate data of survey results from lots of developers. </p>
+<p>I am a <em>little</em> qualified though. Aside from running this site which requires me to think about front end development every day and exposes me to lots of conversations about front end development, I am an active developer myself. I work on CodePen, which is quite a hive of front end developers. I also talk about it every week on ShopTalk Show with a wide variety of guests, and I get to travel all around going to conferences largely focused on front end development.</p>
+<p>So let me take a stab at it.</p>
+<p> <a href="https://css-tricks.com/future-front-end-web-development/#more-255177" class="more-link"><span aria-label="Continue reading What is the Future of Front End Web Development?">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/framework/" rel="tag">framework</a> <a href="https://css-tricks.com/tag/performance/" rel="tag">performance</a> <a href="https://css-tricks.com/tag/preprocessing/" rel="tag">preprocessing</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-254955">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/designing-debugging-ducks-web-projects/" class="article-card-header read-article">
+              Designing and Debugging with Ducks in Your Web Projects            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/designing-debugging-ducks-web-projects/">#</a>
+          <time datetime="2017-05-25">
+            May 25, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/danieltjames27/">
+                <span class="p-author">
+                  Daniel James                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>If you keep up with the jargon within the web development and design industry it's likely that at some point you will have come across the term "duck" at least once or twice. Apart from it being fun to feed bread to them, ducks in the web industry hold at least <em>two completely different meanings</em>.</p>
+<p> <a href="https://css-tricks.com/designing-debugging-ducks-web-projects/#more-254955" class="more-link"><span aria-label="Continue reading Designing and Debugging with Ducks in Your Web Projects">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-254958">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/taking-vacation-no-one-paying-take-time-off/" class="article-card-header read-article">
+              Taking Vacation When No One is Paying You to Take Time Off            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/taking-vacation-no-one-paying-take-time-off/">#</a>
+          <time datetime="2017-05-24">
+            May 24, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/geoffgraham/">
+                <span class="p-author">
+                  Geoff Graham                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p>We're not going to be looking at CSS in this post but we are going to talk about tricks for taking paid vacations when no one is paying you to take time off. I suspect that there are a number of us in the front-end development community who face similar situations and addressing is one way we can figure it out together and hopefully glean ideas that make our work-life balance much healthier.</p>              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/freelance/" rel="tag">freelance</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+      
+<article class="article-card module module-articlearticle" id="post-254561">
+
+  
+  
+  <div class="content-and-tags">
+
+    <div class="module-content">
+
+      <header class="article-card-header">
+
+        <div class="article-card-title">
+
+          <h2 class="">
+            <a href="https://css-tricks.com/tools-html-email-workflow/" class="article-card-header read-article">
+              The Tools of an HTML Email Workflow            </a>
+          </h2>
+
+          
+        </div>
+
+        <div class="byline">
+          <a href="https://css-tricks.com/tools-html-email-workflow/">#</a>
+          <time datetime="2017-05-24">
+            May 24, 2017          </time>
+                      <span class="author">
+              By
+              <a href="https://css-tricks.com/author/chriscoyier/">
+                <span class="p-author">
+                  Chris Coyier                </span>
+              </a>
+            </span>
+                            </div>
+
+      </header>
+
+      <div class="text-block">
+                  <p><a href="https://shoptalkshow.com/episodes/263-html-email-kevin-mandeville-camiah/">Last week's ShopTalk Show</a> was all about HTML Email. It's such a fascinating subject, as technically it <em>is</em> front-end web development, but it almost feels like a bizarro alternate universe. </p>
+<p>We have dozens of browsers to worry about, they have hundreds of clients to consider. We worry about whether fancy new APIs are supported, they worry about whether padding is supported. We have grid layout, they have.... <a href="https://litmus.com/community/discussions/6489-using-css-grid-for-the-latest-litmus-newsletter-layout">grid layout?!</a></p>
+<p>It's tempting to make the joke: <em>"It's coding like it's 1999!"</em>, but as we talk about in this episode, that's not really true. </p>
+<p>Aside from all that, another thing I thing fascinating are all the tools involved. Lemme think this out.</p>
+<p> <a href="https://css-tricks.com/tools-html-email-workflow/#more-254561" class="more-link"><span aria-label="Continue reading The Tools of an HTML Email Workflow">(more&hellip;)</span></a></p>
+              </div>
+
+    </div>
+
+          <div class="tags">
+        <svg class="icon-tag" width="12px" height="12px"><use xlink:href="#icon-tag"></use></svg><a href="https://css-tricks.com/tag/email/" rel="tag">Email</a> <a href="https://css-tricks.com/tag/html-email/" rel="tag">html email</a>      </div>
+    
+  </div>
+
+</article>
+
+      
+      
+    
+  </main>
+
+  <div class="pagination">
+    <span class="pagination-older">
+      <a href="https://css-tricks.com/page/2/" class="button">&larr; Older Stuff</a>    </span>
+    <span class="pagination-newer">
+          </span>
+  </div>
+
+</div>
+
+<aside class="entry-unrelated sidebar sidebar-right">
+
+  
+  
+  <div class="module module-padded module-jobs">
+
+  <h4 class="h4">Front-End Jobs</h4>
+
+  
+  <ul class="job-list">
+
+        <li>
+            <a href="http://codepen.io/url/job/zbwGRZ">
+        <strong>
+          DokBID        </strong>
+        is hiring a
+        Senior Front End Developer      </a>
+    </li>
+        <li>
+            <a href="http://codepen.io/url/job/rBLjWz">
+        <strong>
+          Cornell University College of Agriculture and Life Sciences        </strong>
+        is hiring a
+        Web Production Specialist       </a>
+    </li>
+        <li>
+            <a href="http://codepen.io/url/job/ZNRPvZ">
+        <strong>
+          AltspaceVR        </strong>
+        is hiring a
+        Virtual Reality Front End UI Engineer      </a>
+    </li>
+    
+  </ul>
+
+  <div class="button-wrap">
+
+    <a href="/jobs/" class="button full-width-button">See More Jobs</a>
+    <a href="https://codepen.io/job/new/" class="button full-width-button">Post a Job</a>
+  </div>
+
+</div>
+      <div class="module module-squarespace">
+      <div id="bsap_1306801" class="bsarocks bsap_3469a2a501a9e18091036aa0c89f9dcb"></div>
+    </div>
+  
+      <div class="module module-wufoo">
+      <a href="https://ad.doubleclick.net/ddm/clk/303181152;128762502;s" class="wufoo-image-wrap">
+        <img src="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/images/wf-white-500x210.png" alt="Wufoo by SurveyMonkey">
+
+        <p>Drag and drop builder. Spam protection. Logic and branching. Report building. API access and integration. <strong>Easily create powerful web forms with Wufoo.</strong></p>
+
+        <p>We've been using Wufoo for <strong>over a decade</strong> here at CSS-Tricks.</p>
+      </a>
+    </div>
+  
+</aside>
+
+
+  </div>
+
+  <footer class="site-footer footer-newsletter">
+
+    <div class="footer-section-1"></div>
+
+    <div class="footer-section-2">
+
+      <img src="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/images/get-the-newsletter.png" alt="Get the Newsletter!">
+
+      <form action="//chriscoyier.us2.list-manage.com/subscribe/post?u=155f5a9ccc4e24c318130cace&amp;id=197f127a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+        <p class="mc-field-group">
+          <label for="mce-EMAIL" class="screen-reader">Email Address</label>
+          <input type="email" name="EMAIL" class="required email mailchimp-email-input" id="mce-EMAIL">
+          <svg class="icon-email" width="20px" height="15px">
+            <use xlink:href="#icon-email"></use>
+          </svg>
+          <input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" class="button subscribe-button">
+        </p>
+        <div id="mce-responses" class="clear">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
+        <div style="position: absolute; left: -9999px; top: -9999px"><input type="text" name="b_155f5a9ccc4e24c318130cace_197f127a68" value=""></div>
+
+      </form>
+    </div>
+
+    <div class="footer-section-3">
+      Lots of great stuff that isn't published anywhere else!
+    </div>
+
+  </footer>
+
+    <footer class="site-footer footer-mediatemple">
+
+    <div class="footer-section-1"></div>
+    <div class="footer-section-2">
+      <a href="https://mediatemple.net/landing/csstricks/?utm_source=CSS-Tricks&utm_medium=display&utm_campaign=heaeder-box"><img class="mt-img" src="https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/images/mediatemple-logo-white-superwide.svg" alt="Media Temple"></a>
+    </div>
+    <div class="footer-section-3">
+      <a href="https://mediatemple.net/landing/csstricks/?utm_source=CSS-Tricks&utm_medium=display&utm_campaign=heaeder-box">CSS-Tricks web host since day one. Save 20% with code <strong>CSSTRICKS</strong>.</a>
+    </div>
+
+  </footer>
+  
+  <footer class="site-footer footer-colophon">
+
+    <div class="footer-section-1"></div>
+
+    <div class="footer-section-2">
+      <p>CSS-Tricks* is created, written by, and maintained by <a href="http://chriscoyier.net">Chris Coyier</a> and <a href="/about/">a team</a> of swell people. It is built on <a href="http://wordpress.org/">WordPress</a>, hosted by <a href="https://mediatemple.net/landing/csstricks/?utm_source=CSS-Tricks&utm_medium=display&utm_campaign=footer-link">Media Temple</a>, and the assets are served by <a href="http://tracking.maxcdn.com/c/13088/3982/378">MaxCDN</a>. It is made possible through <a href="/advertising/">sponsorships</a> from products and services we like.</p>
+
+      <p class="mega-big-time-warning"><small>*May or may not contain any actual "CSS" or "Tricks".</small></p>
+
+      <a class="twitter-follow-button" href="https://twitter.com/Real_CSS_Tricks">
+        Follow @Real_CSS_Tricks
+      </a>
+
+      <nav>
+        <a href="/contact/">Contact</a>
+        <a href="/about/">About</a>
+        <a href="/archives/">Archives</a>
+        <a href="/advertising/">Advertise</a>
+        <a href="/jobs/">Jobs</a>
+        <a href="/license/">License</a>
+        <a href="/subscription-options/">Subscribe</a>
+        <a href="/feed/">RSS</a>
+        <a href="/guest-posting/">Guest Posting</a>
+      </nav>
+
+    </div>
+
+    <div class="footer-section-3">
+      <svg class="icon-footer-star" width="280px" height="280px">
+        <use xlink:href="#icon-logo-star"></use>
+      </svg>
+    </div>
+
+  </footer>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none"><symbol id="icon-anchor" viewbox="0 0 54.89 64"><title>icon-anchor</title><path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" d="M26.96 13v50"/><path fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="2" d="M13.96 50l-10-3-3 10M39.96 50l10-3 4 10"/><path d="M49.71 47A24 24 0 0 1 27 63 24 24 0 0 1 4.21 47M17.96 17h18" fill="none" stroke="#000" stroke-linejoin="bevel" stroke-width="2"/><circle cx="26.96" cy="7" r="6" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/></symbol><symbol id="icon-close" viewbox="0 0 95.08 95.09"><title>icon-close</title><path d="M58.31 47.47l34.58-34.58a7.63 7.63 0 0 0 0-10.69 7.63 7.63 0 0 0-10.69 0L47.62 36.78 13 2.19a7.63 7.63 0 0 0-10.69 0 7.63 7.63 0 0 0 0 10.69l34.6 34.6L2.33 82.07a7.29 7.29 0 0 0 0 10.69 7.63 7.63 0 0 0 10.69 0l34.6-34.6 34.6 34.6a7.27 7.27 0 0 0 10.68 0 7.63 7.63 0 0 0 0-10.69z" data-name="Layer 1"/></symbol><symbol id="icon-email" viewbox="0 0 100 68.89"><title>icon-email</title><path d="M36.25 38.44L47.74 49.1a3.33 3.33 0 0 0 4.51 0l11.5-10.66 24.69 23.78H11.56zM93.33 11v46.6L68.68 33.85zM6.67 11l24.65 22.85L6.67 57.64zm5.1-4.37h76.46L50 42.12zM4.44 0A4.51 4.51 0 0 0 0 4.44v60a4.51 4.51 0 0 0 4.44 4.44h91.12a4.51 4.51 0 0 0 4.44-4.44v-60A4.51 4.51 0 0 0 95.56 0z" data-name="Layer 1"/></symbol><symbol id="icon-link" viewbox="0 0 100 58.84"><title>icon-link</title><path d="M78.47 48H49.21a10.66 10.66 0 0 1-9-4.91h10.58A21.57 21.57 0 0 0 71.7 26.64h6.76a10.67 10.67 0 0 1 0 21.33zm-67.6-26.47a10.67 10.67 0 0 1 10.67-10.66H50.8A10.59 10.59 0 0 1 58.34 14a10.94 10.94 0 0 1 1.43 1.79H49.21a21.57 21.57 0 0 0-20.92 16.4h-6.76a10.67 10.67 0 0 1-10.66-10.66zm39.92 10.66H39.86a10.68 10.68 0 0 1 9.35-5.54h10.93a10.67 10.67 0 0 1-9.35 5.54zM100 37.31a21.53 21.53 0 0 0-21.53-21.53h-6.92A21.53 21.53 0 0 0 50.8 0H21.54a21.53 21.53 0 0 0 0 43.06h6.83v-.31A21.41 21.41 0 0 0 34 52.53a21.4 21.4 0 0 0 15.2 6.31h29.26A21.56 21.56 0 0 0 100 37.31z"/></symbol><symbol id="icon-logo-star" viewbox="0 0 362.62 388.52"><title>icon-logo-star</title><path d="M156.58 239l-88.3 64.75c-10.59 7.06-18.84 11.77-29.43 11.77-21.19 0-38.85-18.84-38.85-40 0-17.69 14.13-30.64 27.08-36.52l103.6-44.74-103.6-45.92C13 142.46 0 129.51 0 111.85 0 90.66 18.84 73 40 73c10.6 0 17.66 3.53 28.25 11.77l88.3 64.75-11.74-104.78C141.28 20 157.76 0 181.31 0s40 18.84 36.5 43.56L206 149.52l88.3-64.75C304.93 76.53 313.17 73 323.77 73a39.2 39.2 0 0 1 38.85 38.85c0 18.84-12.95 30.61-27.08 36.5l-103.61 45.91L335.54 239c14.13 5.88 27.08 18.83 27.08 37.67 0 21.19-18.84 38.85-40 38.85-9.42 0-17.66-4.71-28.26-11.77L206 239l11.77 104.78c3.53 24.72-12.95 44.74-36.5 44.74s-40-18.84-36.5-43.56z"/></symbol><symbol id="icon-menu" viewbox="0 0 100 68.42"><title>icon-menu</title><path d="M94.73 10.53H5.27c-7 0-7-10.53 0-10.53h89.46c6.88.14 6.88 10.38 0 10.53zm0 18.42H5.27c-7 0-7 10.53 0 10.53h89.46c6.86-.17 6.86-10.38 0-10.53zm0 28.94H5.27c-7 0-7 10.53 0 10.53h89.46c7.03 0 7.03-10.53 0-10.53z" data-name="Layer 1"/></symbol><symbol id="icon-nav-almanac" viewbox="0 0 64 64"><path fill="none" d="M7 1h46v62H7z"/><path fill="none" vector-effect="non-scaling-stroke" d="M15 63V2M20 15h28M20 21h28"/></symbol><symbol id="icon-nav-forums" viewbox="0 0 64 64"><path d="M10 15h44v2H10zM10 25h44v2H10zM10 35h44v2H10z"/><path d="M17 61.174L32.37 48H64V4H0v44h17v13.174zM2 46V6h60v40H31.63L19 56.826V46H2z"/></symbol><symbol id="icon-nav-gallery" viewbox="0 0 64 64"><path d="M0 54h64V10H0v44zm2-2v-4.544l21.952-19.09 12.156 12.156 6.051-8.068L62 49.459V52H2zm60-40v34.826l-20.16-17.28-5.949 7.932-11.843-11.844L2 44.805V12h60z"/><path d="M51 28c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.691-6 6 2.691 6 6 6zm0-10c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z"/></symbol><symbol id="icon-nav-guide" viewbox="0 0 64 56.9"><title>icon-nav-guide</title><path d="M1 55.45l21-8 20 8 21-8v-46l-21 8-20-8-21 8v46zM22 1.45v46M42 9.45v46"/></symbol><symbol id="icon-nav-home" viewbox="0 0 64 64"><path d="M32 3L2 33h9v30h12V47h16v16h12V33h11z"/></symbol><symbol id="icon-nav-jobs" viewbox="0 0 64 64"><path d="M41 37.586L23.414 20l12-12-5.305-5.302-.688.486c-.025.018-2.537 1.769-5.671 1.769-2.244 0-4.277-.896-6.043-2.66L17 1.586-.414 19 12 31.414l10-10L39.586 39l-3 3L57 62.414 64.414 55 44 34.586l-3 3zM2.414 19L17.026 4.388c1.983 1.703 4.241 2.565 6.724 2.565 2.722 0 4.992-1.057 6.103-1.687L32.586 8 12 28.586 2.414 19zM57 59.586L39.414 42 44 37.414 61.586 55 57 59.586z"/></symbol><symbol id="icon-nav-newsletter" viewbox="0 0 64 64"><path d="M64 12H0v39h64V12zm-4.395 2L32 31.81 4.395 14h55.21zM2 49V14.835L32 34.19l30-19.355V49H2z"/></symbol><symbol id="icon-nav-shop" viewbox="0 0 64 64"><path d="M44 18h10v45H10V18h10z"/><path d="M22 24V11c0-5.523 4.477-10 10-10s10 4.477 10 10v13"/></symbol><symbol id="icon-nav-snippets" viewbox="0 0 64 64"><path d="M0 64h64.414L0-.414V64zm2-9h6v-2H2v-6h4v-2H2v-6h6v-2H2v-6h4v-2H2v-6h6v-2H2V4.414L59.586 62H2v-7z"/><path d="M13 27.586V55h27.414L13 27.586zm2 4.828L35.586 53H15V32.414zM64.375 46.375l-2.472-9.886L25-.414 17.586 7l36.903 36.903 9.886 2.472zm-2.75-2.75l-6.114-1.528L26.414 13 31 8.414l29.097 29.097 1.528 6.114zM25 2.414L29.586 7 25 11.586 20.414 7 25 2.414z"/></symbol><symbol id="icon-nav-video" viewbox="0 0 64 64"><path d="M46 30l17-10v32L46 42v10H1V20h45zM6 28h4M14 28h4"/><path d="M7 36h18v10H7zM6 12h26l8 8"/></symbol><symbol id="icon-search" viewbox="0 0 100 100"><title>icon-search</title><path d="M80.65 66.78a33.55 33.55 0 0 1-47.44-47.44 33.55 33.55 0 1 1 47.44 47.44zm6.73-54.16a43.06 43.06 0 0 0-65.32 55.71L2 88.39A6.8 6.8 0 0 0 11.61 98l20.06-20.06a43.06 43.06 0 0 0 55.71-65.32z"/></symbol><symbol id="icon-star" viewbox="0 0 100 95.52"><title>icon-star</title><path d="M64.19 28.77a5.17 5.17 0 0 0 3.9 2.83s29.27-3 31.74 4.61-23 22.39-23 22.39a5.17 5.17 0 0 0-1.49 4.58s11.91 26.9 5.42 31.61S52.4 79.87 52.4 79.87a5.21 5.21 0 0 0-2.41-.6 5.14 5.14 0 0 0-2.41.6S25.68 99.5 19.2 94.79s5.42-31.61 5.42-31.61a5.18 5.18 0 0 0-1.49-4.58S-2.31 43.83.17 36.21s31.74-4.61 31.74-4.61a5.19 5.19 0 0 0 3.9-2.83S42 0 50 0s14.19 28.77 14.19 28.77z" data-name="Layer 1"/></symbol><symbol id="icon-tag" viewbox="0 0 100 99.98"><title>icon-tag</title><path d="M42 42a10.07 10.07 0 1 1 0-14.24A10 10 0 0 1 42 42zm56 6.5l-43.74-44a7.19 7.19 0 0 0-5-2.25L8 0a7.55 7.55 0 0 0-8 7v1l2.5 41a7.11 7.11 0 0 0 2.25 4.75l43.49 44a7.2 7.2 0 0 0 5.24 2.25 6.81 6.81 0 0 0 5.25-2.25L97.72 59A7.47 7.47 0 0 0 98 48.5z"/></symbol></svg>
+  <script>var pollsL10n = {"ajax_url":"https:\/\/css-tricks.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"0","show_fading":"1"};</script><script>var bblpAJAX = {"ajaxurl":"https:\/\/css-tricks.com\/wp-admin\/admin-ajax.php"};</script><script type='text/javascript' src='https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/js/libs/jquery-3.1.1.min.js'></script>
+<script type='text/javascript' src='https://cdn.css-tricks.com/wp-includes/js/wp-embed.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='https://cdn.css-tricks.com/wp-content/uploads/minqueue-cache/minqueue-e220d307-7258ac5c.js'></script>
+
+  
+<script src='https://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-16/js/min/global-min.js?v=1.6'></script>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68528-29', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+</body>
+
+</html>
