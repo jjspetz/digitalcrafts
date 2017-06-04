@@ -18,19 +18,20 @@ var urls = [
 for (let i=0; i<urls.length; i++) {
   rp(urls[i])
     .then(function(html) {
-      console.log(html);
+
+    // create output file
+    var output = i + '.html';
+
+    // write formated text into output file
+    fs.writeFile(output, html, function(error) {
+      if (error) {
+        console.error(error);
+        return;
+      }
+      console.log(output + ' saved.');
+      });
     })
-
-  // create output file
-  var output = i + '.html';
-
-  // write formated text into output file
-  fs.writeFile(output, html, function(error) {
-    if (error) {
-      console.error(error);
-      return;
-    }
-    console.log(output + ' saved.');
+    .catch(function(error) {
+      console.log(error);
     });
-  });
 }
