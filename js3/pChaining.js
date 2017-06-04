@@ -3,7 +3,7 @@
 
 //imports
 var rp = require('request-promise');
-var fs = require('fs');
+var fs = require('fs-extra');
 
 // urls to scrape
 var urls = [
@@ -14,24 +14,24 @@ var urls = [
   'https://en.wikipedia.org/wiki/Google_Chrome'
 ];
 
+// set up new promises
+let getIt = function(i) {
+  return rp(urls[i]);
+}
+let write = function(html, i) {
+  let output = i + '.html';
+  return fs.outputFile(output, html);
+}
 // iterates over array of urls
 for (let i=0; i<urls.length; i++) {
-  rp(urls[i])
+  getIt(i)
     .then(function(html) {
-
-    // create output file
-    var output = i + '.html';
-
-    // write formated text into output file
-    fs.writeFile(output, html, function(error) {
-      if (error) {
-        console.error(error);
-        return;
-      }
-      console.log(output + ' saved.');
-      });
+      return write(html, i);
     })
-    .catch(function(error) {
-      console.log(error);
+    .then(function() {
+      console.log('file ' + i + '.html saved');
+    })
+    .catch(function(err) {
+      console.log(err);
     });
 }
