@@ -11,6 +11,11 @@ db.query('SELECT * FROM restaurant')
     results.forEach(function(row) {
       console.log(row.id, row.name, row.address, row.category);
     });
+
+    return db.one("SELECT * FROM restaurant WHERE name='KFC'");
+  })
+  .then(function(row) {
+    console.log(row);
   })
   .catch(function(err) {
     console.log(err);
