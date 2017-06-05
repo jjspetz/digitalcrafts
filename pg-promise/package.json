@@ -10,6 +10,8 @@
   "description": "",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "pg-promise": "^5.9.0"
+    "co": "^4.6.0",
+    "pg-promise": "^5.9.0",
+    "prompt-promise": "^1.0.3"
   }
 }
