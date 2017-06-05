@@ -24,13 +24,19 @@ prompt('album name: ')
   prompt.done();
   var result = {name: res[0], release_date: res[1], band: res[2]};
   var query = "INSERT INTO album VALUES (default, ${release_date}, ${name}, ${band})";
-  return db.result(query, result);
+  return db.query(query, result);
 })
-.then(function(result) {
-  console.log(result);
-  // console.log('Created album with ID ' + );
+.then(function() {
+  var query = "SELECT id FROM album WHERE name=$1"
+  return db.query(query, res[0]);
+})
+.then(function(id) {
+  console.log('Created album with ID ' +  id[0].id);
 })
 .catch(function rejected(err) {
   console.log('error:', err.stack);
   prompt.finish();
+})
+.finally(function() {
+  pgp.end();
 });
