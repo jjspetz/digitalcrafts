@@ -16,6 +16,11 @@ db.query('SELECT * FROM restaurant')
   })
   .then(function(row) {
     console.log(row);
+
+    return db.result("INSERT INTO restaurant VALUES (default, 'VIPs')")
+  })
+  .then(function(data) {
+    console.log(data);
   })
   .catch(function(err) {
     console.log(err);
