@@ -1,0 +1,19 @@
+body {
+  font-size: 26pt;
+  margin: 20px;
+  background-color: yellow;
+  font-family: 'Gochi Hand', cursive;
+}
+.btn {
+  text-align: center;
+  color: black;
+  font-family: sans-serif;
+  width: 2.5em;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin-left: 3em;
+  padding: 5px;
+}
+ul {
+  list-style: none;
+}
