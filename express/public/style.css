@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  padding-left: 5%;
+  border: 15px solid blue;
+  height: calc(100vh - 30px);
+  background-color: yellow;
+}
