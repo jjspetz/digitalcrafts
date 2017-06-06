@@ -5,6 +5,12 @@ var express = require('express');
 var app = express();
 var bp = require('body-parser');
 
+var promise = require('bluebird')
+var pgp = require('pg-promise')({
+  promiseLib: promise
+});
+var db = pgp({database: 'restaurant'})
+
 // import handlebars
 app.set('view engine', 'hbs');
 
@@ -85,6 +91,19 @@ app.post('/submit', function(req, res) {
 });
 app.get('/thanks', function(req, res) {
   res.render('thanks.hbs', {title: 'Thank You'});
+});
+
+app.get('/search', function(req, resp, next) {
+  let term = req.query.term;
+  let query = "SELECT * FROM restaurant WHERE \
+  restaurant.name ILIKE '%$1#%'";
+  db.any(query, term)
+    .then(function(results) {
+      resp.render('results.hbs', {
+        results: results
+      });
+    })
+    .catch(next);
 });
 
 // server port
