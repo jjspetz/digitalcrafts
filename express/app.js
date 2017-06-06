@@ -40,6 +40,11 @@ app.get('/post/:slug', function(request, response) {
   var slug = request.params.slug;
   response.send('Post About: ' + slug);
 });
+// greet exercise
+app.get('/greet/:slug', function(req, res) {
+  var slug = req.params.slug;
+  res.send(`Hello, ${slug}!`);
+});
 // get parameters
 app.get('/hello', function(request, response) {
   var name = request.query.name || 'World';
