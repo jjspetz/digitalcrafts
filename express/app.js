@@ -25,6 +25,16 @@ app.get('/about', function(request, response) {
 app.get('/projects', function(request, response) {
   response.send('My Projects');
 });
+// exercise routes
+app.get('/cats', function(req, res) {
+  res.send('Meow');
+});
+app.get('/dogs', function(req, res) {
+  res.send('Woof');
+});
+app.get('/cats_and_dogs', function(req, res) {
+  res.send('Living together');
+});
 // get URL paramaters
 app.get('/post/:slug', function(request, response) {
   var slug = request.params.slug;
