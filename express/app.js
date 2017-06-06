@@ -10,6 +10,11 @@ app.set('view engine', 'hbs');
 // for static files
 app.use('/static', express.static('public'))
 
+// capitalize function
+String.prototype.capitalize = function() {
+    return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
 // routes
 app.get('/', function(request, response) {
   response.send('Hello World!');
@@ -27,8 +32,17 @@ app.get('/post/:slug', function(request, response) {
 });
 // get parameters
 app.get('/hello', function(request, response) {
-  var name = request.query.name || 'World;'
-  response.send('Hello ' + name);
+  var name = request.query.name || 'World';
+  var context = {
+    title: 'Hello',
+    name: name.capitalize(),
+    friends: [
+      {name:'JJ', age:34},
+      {name: 'Jordan'},
+      {name: 'Ronda'}
+    ]
+  };
+  response.render('hello.hbs', context);
 });
 
 // server port
