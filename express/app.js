@@ -60,6 +60,17 @@ app.get('/hello', function(request, response) {
   response.render('hello.hbs', context);
 });
 
+// report your age exercise
+app.get('/year', function(req, res) {
+  var d = new Date();
+  var birthYear = (d.getFullYear() - req.query.age) || 'unknown';
+  var context = {
+    title: 'Age',
+    year: birthYear
+  }
+  res.render('age.hbs', context);
+});
+
 // server port
 app.listen(8000, function() {
   console.log('listening on port 8000')
