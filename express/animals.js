@@ -19,7 +19,8 @@ app.get('/fav_animals', function(req, res) {
   ];
 
   var content = {
-    animal: animals
+    animal: animals,
+    style: 'style.css'
   }
   res.render('fav_animals.hbs', content);
 });
