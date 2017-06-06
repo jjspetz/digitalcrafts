@@ -3,12 +3,14 @@
 
 var express = require('express');
 var app = express();
+var bp = require('body-parser');
 
 // import handlebars
 app.set('view engine', 'hbs');
 
 // for static files
 app.use('/static', express.static('public'))
+app.use(bp.urlencoded({extended: false}));
 
 // capitalize function
 String.prototype.capitalize = function() {
@@ -69,6 +71,20 @@ app.get('/year', function(req, res) {
     year: birthYear
   }
   res.render('age.hbs', context);
+});
+
+// form routes
+app.get('/form', function(req, res) {
+  res.render('form.hbs', {title: 'form'});
+});
+
+app.post('/submit', function(req, res) {
+  console.log(req.body);
+  // res.send(req.body);
+  res.redirect('/thanks')
+});
+app.get('/thanks', function(req, res) {
+  res.render('thanks.hbs', {title: 'Thank You'});
 });
 
 // server port
