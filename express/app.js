@@ -4,6 +4,12 @@
 var express = require('express');
 var app = express();
 
+// import handlebars
+app.set('view engine', 'hbs');
+
+// for static files
+app.use('/static', express.static('public'))
+
 // routes
 app.get('/', function(request, response) {
   response.send('Hello World!');
