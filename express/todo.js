@@ -4,7 +4,8 @@
 var express = require('express');
 var app = express();
 var bp = require('body-parser');
-
+var morgan = require('morgan');
+var session = require('express-session');
 var promise = require('bluebird')
 var pgp = require('pg-promise')({
   promiseLib: promise
@@ -14,13 +15,45 @@ var db = pgp({database: 'todo'})
 // import handlebars
 app.set('view engine', 'hbs');
 
-// for static files
+// Middleware
 app.use('/static', express.static('public'))
 app.use(bp.urlencoded({extended: false}));
+app.use(morgan('dev'));
 
+app.use(session({
+  secret: process.env.SECRET_KEY || 'dev',
+  resave: true,
+  saveUninitialized: false,
+  cookie: {maxAge: 60000}
+}));
+
+app.use(function (request, response, next) {
+  if (request.session.user) {
+    next();
+  } else if (request.path == '/login') {
+    next();
+  } else {
+    response.redirect('/login');
+  }
+});
+
+// login route
+app.get('/login', function (request, response) {
+  response.render('login.hbs');
+});
+app.post('/login', function (request, response) {
+  var username = request.body.username;
+  var password = request.body.password;
+  if (username == 'aaron' && password == 'narf') {
+    request.session.user = username;
+    response.redirect('/');
+  } else {
+    response.render('login.hbs');
+  }
+});
 
 // functionality for displaying todo list
-app.get('/todos', function(req, resp) {
+app.get('/todos', function(req, resp, next) {
   let query = "SELECT * FROM task";
   db.any(query)
     .then(function(results) {
@@ -30,6 +63,7 @@ app.get('/todos', function(req, resp) {
         style: '../../static/todo.css',
       });
     })
+    .catch(next);
 });
 
 // functionality for adding to todo list
