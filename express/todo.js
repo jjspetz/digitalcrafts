@@ -51,7 +51,7 @@ app.post('/login', function (request, response, next) {
     .then(function(results) {
       if(results.name == username && results.password == password) {
         request.session.user = username;
-        response.redirect('/');
+        response.redirect('/todos');
       } else {
         response.render('login.hbs');
       }
