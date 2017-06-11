@@ -26,8 +26,10 @@ exports.check_pass = function(stored_pass, password) {
   var hash = key.toString('hex');
   if (hash === pass_parts[3]) {
     console.log('Passwords Matched!');
+    return true;
   } else {
     console.log('Doesn\'t Match.');
+    return false
   }
 }
 

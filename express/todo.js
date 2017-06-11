@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 var bp = require('body-parser');
-var password = require('./password');
+var passFunc = require('./password');
 var morgan = require('morgan');
 var session = require('express-session');
 var promise = require('bluebird')
@@ -25,7 +25,7 @@ app.use(session({
   secret: process.env.SECRET_KEY || 'dev',
   resave: true,
   saveUninitialized: false,
-  cookie: {maxAge: 60000}
+  cookie: {maxAge: 3660000}
 }));
 
 app.use(function (request, response, next) {
@@ -45,13 +45,13 @@ app.get('/login', function (request, response) {
 app.post('/login', function (request, response, next) {
   var username = request.body.username;
   var password = request.body.password;
-  console.log(username, password);
-  var query = "SELECT * FROM users WHERE name=$1 AND password=$2";
-  db.one(query, [username, password])
+  var query = "SELECT * FROM users WHERE name=$1";
+
+  db.one(query, username)
     .then(function(results) {
-      if(results.name == username && results.password == password) {
+      if(passFunc.check_pass(results.password, password)) {
+        // sets user as table id for easy access later
         request.session.user = results.id;
-        console.log(request.session.user);
         response.redirect('/todos');
       } else {
         response.render('login.hbs');
@@ -66,10 +66,11 @@ app.get('/signup', function (request, response) {
 app.post('/signup', function (request, response, next) {
   var username = request.body.username;
   var password = request.body.password;
+  var hash = passFunc.create_hash(password);
   var query = "INSERT INTO users VALUES (default, $1, $2)";
-  db.query(query, [username, password])
+  db.query(query, [username, hash])
     .then(function(results) {
-        console.log('successfully addedto table');
+        console.log('successfully added to table');
         response.redirect('login.hbs');
     })
     .catch(next);
