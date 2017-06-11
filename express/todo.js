@@ -76,8 +76,10 @@ app.post('/signup', function (request, response, next) {
 
 // functionality for displaying todo list
 app.get('/todos', function(req, resp, next) {
-  let query = "SELECT * FROM task";
-  db.any(query)
+  let query = "SELECT name,  description, done FROM task \
+      JOIN users ON user_id=users.id\
+      WHERE name=$1";
+  db.any(query, req.session.user)
     .then(function(results) {
       resp.render('todo.hbs', {
         title: 'TODO',
