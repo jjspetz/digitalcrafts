@@ -31,7 +31,7 @@ app.use(session({
 app.use(function (request, response, next) {
   if (request.session.user) {
     next();
-  } else if (request.path == '/login') {
+  } else if (request.path == '/login' || request.path == '/signup') {
     next();
   } else {
     response.redirect('/login');
@@ -43,6 +43,20 @@ app.get('/login', function (request, response) {
   response.render('login.hbs');
 });
 app.post('/login', function (request, response) {
+  var username = request.body.username;
+  var password = request.body.password;
+  if (username == 'aaron' && password == 'narf') {
+    request.session.user = username;
+    response.redirect('/');
+  } else {
+    response.render('login.hbs');
+  }
+});
+
+app.get('/signup', function (request, response) {
+  response.render('signup.hbs');
+});
+app.post('/signup', function (request, response) {
   var username = request.body.username;
   var password = request.body.password;
   if (username == 'aaron' && password == 'narf') {
