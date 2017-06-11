@@ -50,7 +50,8 @@ app.post('/login', function (request, response, next) {
   db.one(query, [username, password])
     .then(function(results) {
       if(results.name == username && results.password == password) {
-        request.session.user = username;
+        request.session.user = results.id;
+        console.log(request.session.user);
         response.redirect('/todos');
       } else {
         response.render('login.hbs');
@@ -76,9 +77,7 @@ app.post('/signup', function (request, response, next) {
 
 // functionality for displaying todo list
 app.get('/todos', function(req, resp, next) {
-  let query = "SELECT name,  description, done FROM task \
-      JOIN users ON user_id=users.id\
-      WHERE name=$1";
+  let query = "SELECT * FROM task WHERE user_id=$1";
   db.any(query, req.session.user)
     .then(function(results) {
       resp.render('todo.hbs', {
