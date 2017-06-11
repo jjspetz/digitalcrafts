@@ -99,7 +99,7 @@ app.get('/todos/add', function(req, resp) {
 
 // posted added task to database and redirects to list
 app.post('/submit', function(req, resp) {
-  db.query("INSERT INTO task (description) VALUES($1)", req.body.task)
+  db.query("INSERT INTO task (description, user_id) VALUES($1, $2)", [req.body.task, req.session.user])
     .then(function() {
       resp.redirect('/todos');
     })
