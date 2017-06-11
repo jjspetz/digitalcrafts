@@ -42,29 +42,36 @@ app.use(function (request, response, next) {
 app.get('/login', function (request, response) {
   response.render('login.hbs');
 });
-app.post('/login', function (request, response) {
+app.post('/login', function (request, response, next) {
   var username = request.body.username;
   var password = request.body.password;
-  if (username == 'aaron' && password == 'narf') {
-    request.session.user = username;
-    response.redirect('/');
-  } else {
-    response.render('login.hbs');
-  }
+  console.log(username, password);
+  var query = "SELECT * FROM users WHERE name=$1 AND password=$2";
+  db.one(query, [username, password])
+    .then(function(results) {
+      if(results.name == username && results.password == password) {
+        request.session.user = username;
+        response.redirect('/');
+      } else {
+        response.render('login.hbs');
+      }
+    })
+    .catch(next);
 });
 
 app.get('/signup', function (request, response) {
   response.render('signup.hbs');
 });
-app.post('/signup', function (request, response) {
+app.post('/signup', function (request, response, next) {
   var username = request.body.username;
   var password = request.body.password;
-  if (username == 'aaron' && password == 'narf') {
-    request.session.user = username;
-    response.redirect('/');
-  } else {
-    response.render('login.hbs');
-  }
+  var query = "INSERT INTO users VALUES (default, $1, $2)";
+  db.query(query, [username, password])
+    .then(function(results) {
+        console.log('successfully addedto table');
+        response.redirect('login.hbs');
+    })
+    .catch(next);
 });
 
 // functionality for displaying todo list
