@@ -4,6 +4,7 @@
 var express = require('express');
 var app = express();
 var bp = require('body-parser');
+var password = require('./password');
 var morgan = require('morgan');
 var session = require('express-session');
 var promise = require('bluebird')
