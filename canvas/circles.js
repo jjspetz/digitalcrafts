@@ -13,26 +13,24 @@ canvas.height = window.innerHeight;
 window.addEventListener('resize', function() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  circle();
-  insideCircle();
+  bullseye()
 });
 
 
 // draw a circle in center of screen
-function circle() {
+function circle(color, radius) {
   ctx.beginPath();
-  ctx.fillStyle = 'blue';
-  ctx.arc((canvas.width/2), (canvas.height/2), 50, 0, Math.PI * 2, false);
+  ctx.fillStyle = color;
+  ctx.arc((canvas.width/2), (canvas.height/2), radius, 0, Math.PI * 2, false);
   ctx.fill();
 }
 
-// draws a second inner circle;
-function insideCircle() {
-  ctx.beginPath();
-  ctx.fillStyle = 'red';
-  ctx.arc((canvas.width/2), (canvas.height/2), 25, 0, Math.PI * 2, false);
-  ctx.fill();
+function bullseye() {
+  circle('blue', 200);
+  circle('white', 150);
+  circle('yellow', 140);
+  circle('white', 90);
+  circle('red', 80);
 }
 
-circle();
-insideCircle();
+bullseye()
