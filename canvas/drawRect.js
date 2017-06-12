@@ -7,7 +7,18 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// resize canvas on screen resize
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  draw();
+});
+
 
 // draw rectangle in center of screen
-ctx.fillStyle = 'red';
-ctx.fillRect((canvas.width/2 - 50), (canvas.height/2 - 100), 100, 200);
+function draw() {
+  ctx.fillStyle = 'red';
+  ctx.fillRect((canvas.width/2 - 50), (canvas.height/2 - 100), 100, 200);
+}
+
+draw();
