@@ -13,11 +13,11 @@ canvas.height = window.innerHeight;
 window.addEventListener('resize', function() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  draw();
+  insideRect();
 });
 
 
-// draw rectangle in center of screen
+// draw rectangles in center of screen
 function draw() {
   ctx.fillStyle = 'red';
   ctx.fillRect((canvas.width/2 - 100), (canvas.height/2 - 50), 200, 100);
@@ -25,4 +25,12 @@ function draw() {
   ctx.fillRect((canvas.width/2 - 100), (canvas.height/2 + 50), 200, 100);
 }
 
-draw();
+// draws a rectangle inside of another;
+function insideRect() {
+  ctx.fillStyle = 'red';
+  ctx.fillRect((canvas.width/2 - 100), (canvas.height/2 - 50), 200, 100);
+  ctx.fillStyle = 'blue';
+  ctx.fillRect((canvas.width/2 - 50), (canvas.height/2 - 25), 100, 50);
+}
+
+insideRect();
