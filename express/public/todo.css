@@ -17,3 +17,22 @@ body {
 ul {
   list-style: none;
 }
+ul li {
+  width: 500px;
+  border: 2px solid #b4ba16;
+  border-bottom: none;
+}
+input {
+  text-align: center;
+  font-size: 26pt;
+  font-family: 'Gochi Hand', cursive;
+  background: yellow;
+  height: 39px;
+  width: 498px;
+  border: 2px solid #b4ba16
+}
+#add {
+  text-align: center;
+  width: 500px;
+  border: 2px solid #b4ba16
+}
