@@ -11,6 +11,9 @@ var pgp = require('pg-promise')({
 });
 var db = pgp({database: 'restaurant'})
 
+var apicache = require('apicache');
+var cache = apicache.middleware;
+
 // import handlebars
 app.set('view engine', 'hbs');
 
@@ -66,6 +69,14 @@ app.get('/hello', function(request, response) {
     ]
   };
   response.render('hello.hbs', context);
+});
+
+// API
+app.get('/api', cache('5 minutes'), function (request, response) {
+  console.log('generating a new response')
+  response.json(
+    {message: 'This is my api'}
+  )
 });
 
 // report your age exercise
