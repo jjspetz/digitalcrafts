@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apicache": "^0.8.7",
     "express": "^4.15.3",
     "github-yearly-contributions": "^0.3.1"
   }
