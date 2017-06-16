@@ -11,6 +11,6 @@ exports.up = (pgm, run) => {
   run();
 };
 exports.down = (pgm, run) => {
- pgm.deleteTable('restaurant');
+ pgm.dropTable('restaurant');
  run();
 };
