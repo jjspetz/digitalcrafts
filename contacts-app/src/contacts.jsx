@@ -39,8 +39,9 @@ class Contacts extends Component {
 
   addSubmitToContact = () => {
     this.state.contacts.push({
-      name: this.state.name,
-
+      name: this.state.lastName + ', ' + this.state.firstName.slice(),
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
       phone: this.state.phone,
       address: this.state.address,
@@ -49,7 +50,7 @@ class Contacts extends Component {
       zip: this.state.zip,
     })
     this.state.contacts.sort((a, b) => {
-      let x = a.name; let y = b.name;
+      let x = a.lastName; let y = b.lastName;
       return ((x < y) ? -1 : (x > y) ? 1 : 0);
     });
     this.setState({ contacts: this.state.contacts });
@@ -63,11 +64,11 @@ class Contacts extends Component {
           <form className='add' onSubmit={event => this.handleSubmit(event)}>
             <br/><br/>
             <TextField floatingLabelText="first name"
-              value={this.state.name}
+              value={this.state.firstName}
               onChange={event => this.add(event, 'firstName')}/>
             <br/><br/>
             <TextField floatingLabelText="last name"
-              value={this.state.name}
+              value={this.state.lastName}
               onChange={event => this.add(event, 'lastName')}/>
             <br/><br/>
             <TextField floatingLabelText='email'
@@ -109,11 +110,13 @@ class Contacts extends Component {
                     <li>{c.address}</li>
                     <li>{c.city}, {c.state} {c.zip}</li>
                     </div>
-                      :
+                      : (this.state.contacts ?
                     <div>
                     <li>{c.name}</li>
                     <li>{c.city}, {c.state}</li>
                     </div>
+                    :
+                    <div></div>)
                 }
                 </ul>
               )}
