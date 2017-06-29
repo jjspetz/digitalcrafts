@@ -54,7 +54,6 @@ class Contacts extends Component {
   }
 
   expand(event) {
-    this.state.isOpen = !this.state.isOpen;
     this.setState({ isOpen: !this.state.isOpen })
   }
 
