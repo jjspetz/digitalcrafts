@@ -39,7 +39,6 @@ class Contacts extends Component {
         zip: JSON.parse(localStorage['id'+i]).zip,
       })
     }
-    this.setState({ contacts: this.state.contacts });
   }
 
 
@@ -53,8 +52,17 @@ class Contacts extends Component {
     event.preventDefault()
   }
 
-  expand(event) {
-    this.setState({ isOpen: !this.state.isOpen })
+  expand(event, contact) {
+    contact.isOpen = !contact.isOpen;
+    this.setState({ contacts: this.state.contacts })
+  }
+
+  sortContacts = () => {
+    // formates stuff
+    this.state.contacts.sort((a, b) => {
+      let x = a.lastName; let y = b.lastName;
+      return ((x < y) ? -1 : (x > y) ? 1 : 0);
+    });
   }
 
   addSubmitToContact = () => {
@@ -69,6 +77,7 @@ class Contacts extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
+      isOpen: false,
     })
     // puts info on local storage
     let id = 'id' + localStorage.length;
@@ -83,13 +92,8 @@ class Contacts extends Component {
       city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
+      isOpen: false,
     })
-
-    // formates stuff
-    this.state.contacts.sort((a, b) => {
-      let x = a.lastName; let y = b.lastName;
-      return ((x < y) ? -1 : (x > y) ? 1 : 0);
-    });
     this.setState({ contacts: this.state.contacts });
   }
 
@@ -137,9 +141,9 @@ class Contacts extends Component {
 
             {this.state.contacts.map( (c) => {
               return (
-                <ul className='added' onClick={event => this.expand(event)}>
+                <ul onClick={event => this.expand(event, c)}>
                   {
-                    this.state.isOpen ?
+                    c.isOpen ?
                     <div>
                     <li>{c.name}</li>
                     <li>phone: {c.phone}</li>
@@ -147,13 +151,11 @@ class Contacts extends Component {
                     <li>{c.address}</li>
                     <li>{c.city}, {c.state} {c.zip}</li>
                     </div>
-                      : (this.state.contacts ?
+                      :
                     <div>
                     <li>{c.name}</li>
                     <li>{c.city}, {c.state}</li>
                     </div>
-                    :
-                    <div></div>)
                 }
                 </ul>
               )}
@@ -165,6 +167,3 @@ class Contacts extends Component {
 }
 
 export default Contacts
-
-
-var one = document.createElement('div')
