@@ -9,6 +9,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
+// import {BrowsrRouter, Route, Link} from 'react-router-dom';
+
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: indigo500,

@@ -37,7 +37,11 @@ class Contacts extends Component {
       state: this.state.state,
       zip: this.state.zip,
     })
-    this.setState({ contacts: this.state.contacts})
+    this.state.contacts.sort((a, b) => {
+      let x = a.name; let y = b.name;
+      return ((x < y) ? -1 : (x > y) ? 1 : 0);
+    });
+    this.setState({ contacts: this.state.contacts});
   }
 
   render() {
@@ -75,14 +79,10 @@ class Contacts extends Component {
               return (
                 <ul className='added'>
                   <li>{c.name}</li>
-                  <li>{c.email}</li>
-                  <li>{c.phone}</li>
-                  <li>{c.address}</li>
-                  <li>{c.city}</li>
-                  <li>{c.state}</li>
-                  <li>{c.zip}</li>
+                  <li>{c.city}, {c.state}</li>
                 </ul>
               )}
+
             )}
         </div>
       </div>
@@ -91,3 +91,6 @@ class Contacts extends Component {
 }
 
 export default Contacts
+
+
+var one = document.createElement('div')
