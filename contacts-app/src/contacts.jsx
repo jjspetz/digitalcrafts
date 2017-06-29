@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
+import TextField from 'material-ui/TextField';
 import './contacts.css';
 
 class Contacts extends Component {
@@ -13,6 +14,7 @@ class Contacts extends Component {
       city: '',
       state: '',
       zip: '',
+      isOpen: false,
       contacts: [],
     };
   }
@@ -25,6 +27,11 @@ class Contacts extends Component {
     this.addSubmitToContact();
     console.log(this.state.contacts);
     event.preventDefault()
+  }
+
+  expand(event) {
+    this.state.isOpen = !this.state.isOpen;
+    this.setState({ isOpen: !this.state.isOpen })
   }
 
   addSubmitToContact = () => {
@@ -41,7 +48,7 @@ class Contacts extends Component {
       let x = a.name; let y = b.name;
       return ((x < y) ? -1 : (x > y) ? 1 : 0);
     });
-    this.setState({ contacts: this.state.contacts});
+    this.setState({ contacts: this.state.contacts });
   }
 
   render() {
@@ -51,8 +58,9 @@ class Contacts extends Component {
         <div className='content'>
           <form className='add' onSubmit={event => this.handleSubmit(event)}>
             <br/><br/>
-            <label>Name: </label>
-            <input type='text' value={this.state.name} onChange={event => this.add(event, 'name')}/>
+            <TextField floatingLabelText="Name: "
+              value={this.state.name}
+              onChange={event => this.add(event, 'name')}/>
             <br/><br/>
             <label>Email: </label>
             <input type='text' value={this.state.email} onChange={event => this.add(event, 'email')}/>
@@ -77,9 +85,22 @@ class Contacts extends Component {
 
             {this.state.contacts.map( (c) => {
               return (
-                <ul className='added'>
-                  <li>{c.name}</li>
-                  <li>{c.city}, {c.state}</li>
+                <ul className='added' onClick={event => this.expand(event)}>
+                  {
+                    this.state.isOpen ?
+                    <div>
+                    <li>{c.name}</li>
+                    <li>phone: {c.phone}</li>
+                    <li>email: {c.email}</li>
+                    <li>{c.address}</li>
+                    <li>{c.city}, {c.state} {c.zip}</li>
+                    </div>
+                      :
+                    <div>
+                    <li>{c.name}</li>
+                    <li>{c.city}, {c.state}</li>
+                    </div>
+                }
                 </ul>
               )}
 
