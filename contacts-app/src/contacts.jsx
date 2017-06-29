@@ -7,7 +7,7 @@ import './contacts.css';
 class Contacts extends Component {
   constructor() {
     super();
-    this.state = {
+    this.state =  {
       name: '',
       firstname: '',
       lastname: '',
@@ -18,9 +18,30 @@ class Contacts extends Component {
       state: '',
       zip: '',
       isOpen: false,
-      contacts: [],
+      contacts: []
     };
+
+    this.getLocalStorage();
   }
+
+  // set contacts to local storage if any
+  getLocalStorage() {
+    for (var i=0; i<localStorage.length; i++) {
+      this.state.contacts.push({
+        name: JSON.parse(localStorage['id'+i]).name,
+        firstName: JSON.parse(localStorage['id'+i]).firstName,
+        lastName: JSON.parse(localStorage['id'+i]).lastName,
+        email: JSON.parse(localStorage['id'+i]).email,
+        phone: JSON.parse(localStorage['id'+i]).phone,
+        address: JSON.parse(localStorage['id'+i]).address,
+        city: JSON.parse(localStorage['id'+i]).city,
+        state: JSON.parse(localStorage['id'+i]).state,
+        zip: JSON.parse(localStorage['id'+i]).zip,
+      })
+    }
+    this.setState({ contacts: this.state.contacts });
+  }
+
 
   add(event, key) {
     this.setState({[key]: event.target.value})
@@ -38,6 +59,7 @@ class Contacts extends Component {
   }
 
   addSubmitToContact = () => {
+    // pushed info to state
     this.state.contacts.push({
       name: this.state.lastName + ', ' + this.state.firstName.slice(),
       firstName: this.state.firstName,
@@ -49,6 +71,22 @@ class Contacts extends Component {
       state: this.state.state,
       zip: this.state.zip,
     })
+    // puts info on local storage
+    let id = 'id' + localStorage.length;
+    localStorage[id] = JSON.stringify({
+      id: localStorage.length,
+      name: this.state.lastName + ', ' + this.state.firstName.slice(),
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      phone: this.state.phone,
+      address: this.state.address,
+      city: this.state.city,
+      state: this.state.state,
+      zip: this.state.zip,
+    })
+
+    // formates stuff
     this.state.contacts.sort((a, b) => {
       let x = a.lastName; let y = b.lastName;
       return ((x < y) ? -1 : (x > y) ? 1 : 0);
@@ -120,7 +158,6 @@ class Contacts extends Component {
                 }
                 </ul>
               )}
-
             )}
         </div>
       </div>
