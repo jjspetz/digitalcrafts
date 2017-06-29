@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import './contacts.css';
 
 class Contacts extends Component {
@@ -8,6 +9,8 @@ class Contacts extends Component {
     super();
     this.state = {
       name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       phone: '',
       address: '',
@@ -37,6 +40,7 @@ class Contacts extends Component {
   addSubmitToContact = () => {
     this.state.contacts.push({
       name: this.state.name,
+
       email: this.state.email,
       phone: this.state.phone,
       address: this.state.address,
@@ -58,29 +62,39 @@ class Contacts extends Component {
         <div className='content'>
           <form className='add' onSubmit={event => this.handleSubmit(event)}>
             <br/><br/>
-            <TextField floatingLabelText="Name: "
+            <TextField floatingLabelText="first name"
               value={this.state.name}
-              onChange={event => this.add(event, 'name')}/>
+              onChange={event => this.add(event, 'firstName')}/>
             <br/><br/>
-            <label>Email: </label>
-            <input type='text' value={this.state.email} onChange={event => this.add(event, 'email')}/>
+            <TextField floatingLabelText="last name"
+              value={this.state.name}
+              onChange={event => this.add(event, 'lastName')}/>
             <br/><br/>
-            <label>Phone Number: </label>
-            <input type='text' value={this.state.phone} onChange={event => this.add(event, 'phone')}/>
+            <TextField floatingLabelText='email'
+              value={this.state.email}
+              onChange={event => this.add(event, 'email')}/>
             <br/><br/>
-            <label>Address: </label>
-            <input type='text' value={this.state.address} onChange={event => this.add(event, 'address')}/>
+            <TextField floatingLabelText='phone number'
+              value={this.state.phone}
+              onChange={event => this.add(event, 'phone')}/>
             <br/><br/>
-            <label>City: </label>
-            <input type='text' value={this.state.city} onChange={event => this.add(event, 'city')}/>
+            <TextField floatingLabelText='address'
+              value={this.state.address}
+              onChange={event => this.add(event, 'address')}/>
             <br/><br/>
-            <label>State: </label>
-            <input type='text' value={this.state.state} onChange={event => this.add(event, 'state')}/>
+            <TextField floatingLabelText='city'
+              value={this.state.city}
+              onChange={event => this.add(event, 'city')}/>
             <br/><br/>
-            <label>Zip Code:</label>
-            <input type='text' value={this.state.zip} onChange={event => this.add(event, 'zip')}/>
+            <TextField floatingLabelText='state'
+              value={this.state.state}
+              onChange={event => this.add(event, 'state')}/>
             <br/><br/>
-            <button type='submit'>Submit</button>
+            <TextField floatingLabelText='zip code'
+              value={this.state.zip}
+                onChange={event => this.add(event, 'zip')}/>
+            <br/><br/>
+            <RaisedButton primary='primary1Color' labelColor='white' label='Submit' type='submit'></RaisedButton>
           </form>
 
             {this.state.contacts.map( (c) => {

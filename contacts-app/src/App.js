@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {indigo500, indigo100, indigo900, grey500, grey700} from 'material-ui/styles/colors';
+import {indigo500, indigo100, indigo900, grey500, grey700, white} from 'material-ui/styles/colors';
 import Contacts from './contacts.jsx'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -18,6 +18,8 @@ const muiTheme = getMuiTheme({
     primary3Color: indigo900,
     accent1Color: grey500,
     accent2Color: grey700,
+    alternateTextColor: white,
+    labelColor: white,
   }
 })
 
