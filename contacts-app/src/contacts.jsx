@@ -18,9 +18,8 @@ class Contacts extends Component {
       state: '',
       zip: '',
       isOpen: false,
-      contacts: []
+      contacts: [],
     };
-
     this.getLocalStorage();
   }
 
@@ -39,6 +38,7 @@ class Contacts extends Component {
         zip: JSON.parse(localStorage['id'+i]).zip,
       })
     }
+    this.setState({ contacts: this.sortContacts(this.state.contacts) });
   }
 
 
@@ -57,9 +57,9 @@ class Contacts extends Component {
     this.setState({ contacts: this.state.contacts })
   }
 
-  sortContacts = () => {
+  sortContacts = (array) => {
     // formates stuff
-    this.state.contacts.sort((a, b) => {
+    array.sort((a, b) => {
       let x = a.lastName; let y = b.lastName;
       return ((x < y) ? -1 : (x > y) ? 1 : 0);
     });
@@ -94,7 +94,8 @@ class Contacts extends Component {
       zip: this.state.zip,
       isOpen: false,
     })
-    this.setState({ contacts: this.state.contacts });
+
+    this.setState({ contacts: this.sortContacts(this.state.contacts) });
   }
 
   render() {
