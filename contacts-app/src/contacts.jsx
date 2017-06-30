@@ -51,6 +51,16 @@ class Contacts extends Component {
     console.log(this.state.contacts);
     event.preventDefault()
   }
+  handleDelete(event, contact) {
+    // remove from local storage
+    localStorage.removeItem('contact');
+    // remove from state
+    this.state.contacts = this.state.contacts.splice(
+      this.state.contacts.indexOf(this.state.contacts.key),
+      1
+    );
+    this.setState({ contacts: this.state.contacts })
+  }
 
   expand(event, contact) {
     contact.isOpen = !contact.isOpen;
@@ -146,6 +156,7 @@ class Contacts extends Component {
                   {
                     c.isOpen ?
                     <div>
+                    <button onClick={event => this.handleDelete(event, c)}>X</button>
                     <li>{c.name}</li>
                     <li>phone: {c.phone}</li>
                     <li>email: {c.email}</li>
@@ -154,6 +165,7 @@ class Contacts extends Component {
                     </div>
                       :
                     <div>
+                    <button>X</button>
                     <li>{c.name}</li>
                     <li>{c.city}, {c.state}</li>
                     </div>
