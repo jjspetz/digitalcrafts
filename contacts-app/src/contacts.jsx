@@ -9,8 +9,8 @@ class Contacts extends Component {
     super();
     this.state =  {
       name: '',
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
       address: '',
@@ -152,11 +152,13 @@ class Contacts extends Component {
 
             {this.state.contacts.map( (c) => {
               return (
+                <div>
+                <button onClick={event => this.handleDelete(event, c)}>X</button>
                 <ul onClick={event => this.expand(event, c)}>
                   {
                     c.isOpen ?
                     <div>
-                    <button onClick={event => this.handleDelete(event, c)}>X</button>
+
                     <li>{c.name}</li>
                     <li>phone: {c.phone}</li>
                     <li>email: {c.email}</li>
@@ -165,12 +167,12 @@ class Contacts extends Component {
                     </div>
                       :
                     <div>
-                    <button>X</button>
                     <li>{c.name}</li>
                     <li>{c.city}, {c.state}</li>
                     </div>
                 }
                 </ul>
+                </div>
               )}
             )}
         </div>
