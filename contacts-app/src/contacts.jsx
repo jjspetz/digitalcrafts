@@ -4,6 +4,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './contacts.css';
 
+import database, {User} from './firebase';
+
 class Contacts extends Component {
   constructor() {
     super();
@@ -57,6 +59,11 @@ class Contacts extends Component {
   handleSubmit(event) {
     this.addSubmitToContact();
     console.log(this.state.contacts);
+    // to save data to firebase db
+    database.ref('contacts/' + User.user.uid).set({
+      paul: {name: "Paul B"},
+      jim: {name: "Jim"},
+    });
     event.preventDefault()
   }
   handleDelete(event, contact) {
