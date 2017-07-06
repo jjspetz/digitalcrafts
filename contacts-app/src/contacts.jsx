@@ -4,6 +4,9 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import './contacts.css';
 
+import {addContact} from './actions.js';
+import { connect } from 'react-redux';
+
 import database, {User} from './firebase';
 
 class Contacts extends Component {
@@ -191,5 +194,22 @@ class Contacts extends Component {
     );
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    contacts: state
+  }
+}
+function mapDispatchToProps (dispatch) {
+  return {
+    onSubmit: function (id, data) {
+      dispatch(addContact(id, data))
+    }
+  }
+}
+
+Contacts = connect(
+  mapStateToProps, mapDispatchToProps
+)(Contacts)
 
 export default Contacts;

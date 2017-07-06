@@ -3,9 +3,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {indigo500, indigo100, indigo900, grey500, grey700, white} from 'material-ui/styles/colors';
 import Contacts from './contacts.jsx'
-
+import { Provider } from 'react-redux';
+import store from './store.js';
 import {auth} from './firebase';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -38,6 +38,7 @@ class App extends Component {
 
   render() {
     return (
+      <Provider store={store}>
         <MuiThemeProvider muiTheme={muiTheme}>
           <div>
             <button>Login</button>
@@ -45,7 +46,7 @@ class App extends Component {
             <Contacts/>
           </div>
         </MuiThemeProvider>
-
+      </Provider>
     );
   }
 }
