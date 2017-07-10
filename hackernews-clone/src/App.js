@@ -20,9 +20,9 @@ class App extends Component {
         <main>
           <ol>
             works
-            {this.props.top500.map((obj) =>
-              <li>{obj.title}</li>
-            )}
+            {this.props.top500 ? this.props.top500.map((obj) =>
+              <li key={obj.id}>{obj.title}</li>
+            ) : <li>failed</li>}
           </ol>
         </main>
         <footer>

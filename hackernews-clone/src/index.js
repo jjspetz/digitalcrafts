@@ -7,8 +7,10 @@ import database from './fb-config';
 
 var top500 = [];
 
+
 database.ref('/v0/topstories')
   .on('value', function(articles) {
+    top500 = [];
     articles.val().forEach(function(item) {
       database.ref('/v0/item/' + item)
         .once('value').then(function(data) {
@@ -16,7 +18,9 @@ database.ref('/v0/topstories')
         })
     })
     console.log(top500);
+    loadStuff();
   });
-
+function loadStuff() {
 ReactDOM.render(<App top500 = {top500}/>, document.getElementById('root'));
 registerServiceWorker();
+}
