@@ -1,3 +1,13 @@
 .App {
-  text-align: center;
+  margin: 0;
+  text-align: left;
+}
+.header {
+  position: relative;
+  top: 0;
+  background-color: darkorange;
+}
+.header h5, h6 {
+  display: inline-block;
+  margin-right: 20px;
 }
