@@ -5,7 +5,7 @@
 .header {
   position: relative;
   top: 0;
-  background-color: darkorange;
+  background-color: #f60;
 }
 .header h5, h6 {
   display: inline-block;
