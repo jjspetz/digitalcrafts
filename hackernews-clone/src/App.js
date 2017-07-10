@@ -1,23 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import database from './fb-config';
-
-var top500 = [];
-
-database.ref('/v0/topstories')
-  .on('value', function(articles) {
-    articles.val().forEach(function(item) {
-      database.ref('/v0/item/' + item)
-        .once('value').then(function(data) {
-          top500.push(data.val());
-        })
-    })
-    console.log(top500);
-  });
-
-
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -34,7 +19,10 @@ class App extends Component {
         </header>
         <main>
           <ol>
-            <li></li>
+            works
+            {this.props.top500.map((obj) =>
+              <li>{obj.title}</li>
+            )}
           </ol>
         </main>
         <footer>
