@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import database from './fb-config';
 
-database.ref()
+database.ref('/v0/topstories')
+  .on('value', function(articles) {
+    console.log(articles.val());
+  });
 
 class App extends Component {
   render() {
