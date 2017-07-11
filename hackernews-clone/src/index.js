@@ -7,7 +7,6 @@ import database from './fb-config';
 
 var top500 = [];
 
-
 database.ref('/v0/topstories')
   .on('value', function(articles) {
     top500 = [];
@@ -15,12 +14,12 @@ database.ref('/v0/topstories')
       database.ref('/v0/item/' + item)
         .once('value').then(function(data) {
           top500.push(data.val());
-        })
+          loadPage();
+        });
     })
-    console.log(top500);
-    loadStuff();
   });
-function loadStuff() {
-ReactDOM.render(<App top500 = {top500}/>, document.getElementById('root'));
-registerServiceWorker();
+
+function loadPage() {
+  ReactDOM.render(<App top500 = {top500}/>, document.getElementById('root'));
+  registerServiceWorker();
 }
