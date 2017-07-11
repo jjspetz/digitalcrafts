@@ -7,7 +7,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className='header'>
-          <h5>Hacker News </h5>
+          <img className='icon' src='https://news.ycombinator.com/y18.gif'/>
+          <h4>Hacker News </h4>
           <p className='nav'>
             <a> new</a> |
             <a> comments</a> |
@@ -16,6 +17,7 @@ class App extends Component {
             <a> jobs</a> |
             <a> submit</a>
           </p>
+          <p className='login'>login</p>
         </header>
         <main>
           <ol>
