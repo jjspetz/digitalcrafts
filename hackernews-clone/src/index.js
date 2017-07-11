@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Articles from './articles';
 import registerServiceWorker from './registerServiceWorker';
 import database from './fb-config';
 
@@ -32,7 +33,9 @@ database.ref('/v0/topstories')
     })
   });
 
+ReactDOM.render(<App />, document.getElementById('root'));
+
 function loadPage() {
-  ReactDOM.render(<App top500 = {top500}/>, document.getElementById('root'));
+  ReactDOM.render(<Articles top500 = {top500}/>, document.getElementById('root'));
   registerServiceWorker();
 }

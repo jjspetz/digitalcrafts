@@ -18,17 +18,7 @@ class App extends Component {
           </p>
         </header>
         <main>
-          <ol>
-            {this.props.top500.map((obj) =>
-              <li key={obj.id}>
-                <a className='titlelink' href={obj.url}>{obj.title}</a>
-                <span className='nottitle'> ({obj.host})</span>
-                <p className='nottitle'>
-                  {obj.score} points by {obj.by} {obj.time} hours ago | hide | {obj.descendants} comments
-                </p>
-              </li>
-            )}
-          </ol>
+          Articles are loading
         </main>
         <footer>
 
