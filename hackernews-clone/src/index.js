@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Articles from './articles';
 import registerServiceWorker from './registerServiceWorker';
 import database from './fb-config';
 
@@ -11,7 +10,7 @@ var top500 = [];
 database.ref('/v0/topstories')
   .on('value', function(articles) {
     top500 = [];
-    articles.val().forEach(function(item) {
+    articles.val().slice(0, 30).forEach(function(item) {
       database.ref('/v0/item/' + item)
         .once('value').then(function(data) {
           // converts time to hours ago
@@ -33,9 +32,7 @@ database.ref('/v0/topstories')
     })
   });
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
 function loadPage() {
-  ReactDOM.render(<Articles top500 = {top500}/>, document.getElementById('root'));
+  ReactDOM.render(<App top500 = {top500}/>, document.getElementById('root'));
   registerServiceWorker();
 }
