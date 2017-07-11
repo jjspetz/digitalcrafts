@@ -3,9 +3,14 @@ import './App.css';
 
 class App extends Component {
 
-  buildLi() {
+  buildTime() {
     let t = this.props.top500.time.setSeconds;
+    return t;
+  }
+
+  buildHost() {
     let url = this.props.top500.url;
+    return url;
   }
 
   render() {
@@ -25,10 +30,12 @@ class App extends Component {
         <main>
           <ol>
             {this.props.top500.map((obj) =>
-              let t = {obj.time}.setSeconds;
               <li key={obj.id}>
-                <a href={obj.url}>{obj.title}</a>
-                <p>{obj.score} by {obj.by} {t}</p>
+                <a href={obj.url}>{obj.title}</a>({this.buildHost})
+                <p>
+                  {obj.score} points by {obj.by} {this.buildTime}
+                  | hide | {obj.descendants} comments
+                </p>
               </li>
             )}
           </ol>
