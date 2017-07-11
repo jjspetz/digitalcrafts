@@ -31,6 +31,7 @@ class App extends Component {
               </li>
             )}
           </ol>
+          <p className='more'>More</p>
         </main>
         <footer>
 
