@@ -15,7 +15,7 @@ database.ref('/v0/topstories')
         .once('value').then(function(data) {
           // converts time to hours ago
           let time = Math.floor((new Date().getTime()/1000 - data.val().time)/3600);
-          let url = (data.val().url + 'stupidhack').split('\/');
+          let host = (data.val().url + 'stupidhack').split('/');
           top500.push({
             id: data.val().id,
             title: data.val().title,
@@ -24,7 +24,8 @@ database.ref('/v0/topstories')
             descendants: data.val().descendants,
             kids: data.val().kids,
             time: time,
-            url: url[2]
+            host: host[2],
+            url: data.val().url
           });
           loadPage();
         });
