@@ -13,7 +13,20 @@ database.ref('/v0/topstories')
     articles.val().forEach(function(item) {
       database.ref('/v0/item/' + item)
         .once('value').then(function(data) {
-          top500.push(data.val());
+          // converts time to hours ago
+          let time = Math.floor((new Date().getTime()/1000 - data.val().time)/3600);
+          // let url = data.val().url;
+          // url = url.split('/');
+          top500.push({
+            id: data.val().id,
+            title: data.val().title,
+            by: data.val().by,
+            score: data.val().score,
+            descendants: data.val().descendants,
+            kids: data.val().kids,
+            time: time,
+            url: data.val().url
+          });
           loadPage();
         });
     })
