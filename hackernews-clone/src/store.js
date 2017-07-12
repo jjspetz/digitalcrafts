@@ -1,4 +1,6 @@
 import { createStore } from 'redux';
-import articles from './reducers';
-var store = createStore(articles);
+import reducer from './reducers';
+
+var store = createStore(reducer);
+
 export default store;

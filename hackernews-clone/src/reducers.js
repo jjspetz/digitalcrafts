@@ -1,14 +1,22 @@
-import React, {Components} from 'react';
-import {connect} from 'react-redux';
 
-var initialState = {};
+var initialState = {
+  top500: []
+};
 
-export function articles (state, action) {
+export default function reducer (state, action) {
   if (state === undefined) {
     return initialState;
   }
 
   switch (action.type) {
+    case 'SET_top500':
+      var new_state = {};
+      new_state = Object.assign (
+        {},
+        state,
+        {top500: action.articles}
+      )
+      return new_state;
     case 'CHANGE_PAGE':
       return Object.assign(
         {},
@@ -16,11 +24,9 @@ export function articles (state, action) {
         {[action.id]: action.data}
       );
     case 'API_UPDATE':
-      return Object.assign(
-        {},
-        state,
-        {[action.id]: action.data}
-      );
+      return {
+      
+      }
     default:
       return state;
   }
