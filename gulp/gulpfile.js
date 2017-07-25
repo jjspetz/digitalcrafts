@@ -28,3 +28,15 @@ gulp.task('build_js', function() {
 
   return stream;
 });
+
+gulp.task('build-css', function () {
+  return gulp.src("static/nac/**/*.less")
+    .pipe(plumber())
+    .pipe(less({paths: ['static/less']}))
+    .pipe(concat('nac.css'))
+    .pipe(gulp.dest("static/dist"));
+});
+
+gulp.task('watch', ['build-css'], function () {
+  gulp.watch("static/**/*.less", ['build-css']);
+});
