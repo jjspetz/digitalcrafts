@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 
-// class Articles extends Component {
-//   render() {
-//     return (
-//       <div>
-//       {this.props.top500.map((obj) => {
-//           return (<li key={obj.id}>{obj.title}</li>)
-//         }
-//       )}
-//       </div>
-//     );
-//   }
-// }
-
 class Articles extends Component {
   render() {
     return (

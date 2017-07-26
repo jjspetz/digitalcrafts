@@ -6,6 +6,7 @@ facebook-sdk==2.0.0
 Flask==0.12.2
 Flask-Login==0.3.2
 Flask-WTF==0.14.2
+gunicorn==19.4.5
 httplib2==0.10.3
 idna==2.5
 isodate==0.5.4
